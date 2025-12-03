@@ -1,3 +1,8 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
 /********** Template CSS **********/
 h6,
 .h6,
@@ -18,6 +23,8 @@ h1,
   line-height: 1.2;
   color: #03201f;
 }
+
+
 /*** Spinner ***/
 #spinner {
   opacity: 0;
@@ -393,34 +400,100 @@ h1,
 }
 
 /*** Our Team ***/
-.team-item img {
-  transition: 0.5s;
-}
-
-.team-item:hover img {
-  transform: scale(1.2);
-}
-
-.team-overlay {
-  position: absolute;
-  padding: 30px;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.team-profile-card {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  background: linear-gradient(rgba(255, 255, 255, 0.1) 50%, var(--bs-dark));
-  z-index: 1;
+  align-items: center;
+  gap: 20px;
+  transition: 0.3s ease;
+}
+.team-left {
+  border-left: 5px solid #0d6efd;
+  flex-direction: row;
 }
 
-.team-overlay small {
-  display: inline-block;
-  padding: 3px 15px;
-  color: var(--bs-white);
-  background: var(--bs-primary);
+.team-right {
+  border-right: 5px solid #0d6efd;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid #0d6efd;
+}
+
+.team-profile-card:hover {
+  background: #f7faff;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .team-profile-card {
+    flex-direction: column !important;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    border-top: 5px solid #0d6efd;
+    padding-top: 20px;
+  }
+
+  .team-photo {
+    margin-bottom: 12px;
+  }
+
+  .profile-text {
+    margin: 0 !important;
+  }
+}
+
+/*** Logo Slider ***/
+.logo-slider {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+}
+
+.logo-track {
+  display: flex;
+  width: calc(4 * 16.6666%); 
+  animation: scroll 20s linear infinite;
+}
+
+.logo-track img {
+  flex: 0 0 16.6666%; 
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Seamless scroll keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      -50%
+    ); 
+  }
+}
+
+/* Tablet: 4 logos visible */
+@media (max-width: 992px) {
+  .logo-track img {
+    flex: 0 0 25%; /* 4 logos visible */
+    height: 70px;
+  }
+}
+
+/* Mobile: 2 logos visible */
+@media (max-width: 576px) {
+  .logo-track img {
+    flex: 0 0 50%; /* 2 logos visible */
+    height: 60px;
+  }
 }
 
 /*** Testimonial ***/
