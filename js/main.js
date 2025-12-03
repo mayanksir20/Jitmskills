@@ -70,12 +70,12 @@
         return real;
     }
 
-    heroImage.on('changed.owl.carousel translated.owl.carousel', function(event) {
+    heroImage.on('changed.owl.carousel translated.owl.carousel', function (event) {
         var r = realIndexFromEvent(event);
         heroText.trigger('to.owl.carousel', [r, 600, true]);
     });
 
-    heroText.on('changed.owl.carousel translated.owl.carousel', function(event) {
+    heroText.on('changed.owl.carousel translated.owl.carousel', function (event) {
         var r = realIndexFromEvent(event);
         heroImage.trigger('to.owl.carousel', [r, 600, true]);
     });
@@ -95,3 +95,26 @@
     });
 
 })(jQuery);
+
+
+
+
+
+// ---------project-modal.js---------
+function openProjectModal(card) {
+    const title = card.querySelector("h3").innerText;
+    const numbers = card.querySelector(".numbers").innerText;
+    const tagline = card.querySelector(".tagline").innerText;
+    const details = card.querySelector(".details").innerHTML;
+
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalNumbers").innerText = numbers;
+    document.getElementById("modalTagline").innerText = tagline;
+    document.getElementById("modalDetails").innerHTML = details;
+
+    document.getElementById("projectModal").style.display = "block";
+}
+
+function closeProjectModal() {
+    document.getElementById("projectModal").style.display = "none";
+}
