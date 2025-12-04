@@ -1,4 +1,4 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
@@ -23,7 +23,6 @@ h1,
   line-height: 1.2;
   color: #03201f;
 }
-
 
 /*** Spinner ***/
 #spinner {
@@ -402,10 +401,11 @@ h1,
 /*** Our Team ***/
 .team-profile-card {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 20px;
   transition: 0.3s ease;
 }
+
 .team-left {
   border-left: 5px solid #0d6efd;
   flex-direction: row;
@@ -418,10 +418,11 @@ h1,
 }
 
 .team-photo {
-  width: 120px;
-  height: 120px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   border: 3px solid #0d6efd;
+  border-radius: 8px;
 }
 
 .team-profile-card:hover {
@@ -429,10 +430,21 @@ h1,
   transform: translateY(-3px);
 }
 
+/* List Styling */
+.team-list {
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.team-list li {
+  margin-bottom: 4px;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .team-profile-card {
     flex-direction: column !important;
-    text-align: center;
+    /* text-align: center; */
     border-left: none;
     border-right: none;
     border-top: 5px solid #0d6efd;
@@ -441,13 +453,21 @@ h1,
 
   .team-photo {
     margin-bottom: 12px;
+    width: 200px;
+    height: 200px;
   }
 
   .profile-text {
     margin: 0 !important;
   }
 }
-
+.major-card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
 /*** Logo Slider ***/
 .logo-slider {
   overflow: hidden;
@@ -458,12 +478,12 @@ h1,
 
 .logo-track {
   display: flex;
-  width: calc(4 * 16.6666%); 
+  width: calc(4 * 16.6666%);
   animation: scroll 20s linear infinite;
 }
 
 .logo-track img {
-  flex: 0 0 16.6666%; 
+  flex: 0 0 16.6666%;
   height: 80px;
   object-fit: contain;
 }
@@ -474,9 +494,7 @@ h1,
     transform: translateX(0);
   }
   100% {
-    transform: translateX(
-      -50%
-    ); 
+    transform: translateX(-50%);
   }
 }
 
@@ -692,3 +710,6 @@ h1,
     font-size: calc(1.625rem + 4.5vw);
   }
 }
+
+
+
