@@ -253,10 +253,6 @@ h1,
   }
 }
 
-
-
-
-
 /*** Hero Header ***/
 .hero-header {
   margin-top: -170px;
@@ -423,6 +419,10 @@ h1,
   cursor: pointer;
   color: #444;
 }
+#modalDetails ol,
+ul {
+  padding-left: 1rem !important;
+}
 
 @keyframes fadeIn {
   from {
@@ -433,6 +433,71 @@ h1,
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/*** Achievements ***/
+.achievements-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.ach-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1d3557;
+  margin-bottom: 8px;
+}
+
+.ach-subtitle {
+  color: #457b9d;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.ach-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  margin: auto;
+}
+
+.ach-box {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  border-top: 5px solid #0d6b68;
+}
+
+.ach-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.count {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0d6b68;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.count::after {
+  content: "+";
+  font-size: 30px;
+  margin-left: 4px;
+  color: #0d6b68;
+  font-weight: 900;
+  position: absolute;
+  /* right: -20px; */
+  top: 8px;
+}
+
+.ach-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: #333;
 }
 
 /*** Service ***/

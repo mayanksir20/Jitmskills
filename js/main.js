@@ -60,26 +60,6 @@
         nav: false
     });
 
-    // helper: convert owl event index (which includes clones) -> real index
-    function realIndexFromEvent(e) {
-        var count = e.item.count;
-        var index = e.item.index;
-        var clones = (e.relatedTarget && e.relatedTarget._clones) ? e.relatedTarget._clones.length / 2 : 0;
-        var real = index - clones;
-        real = ((real % count) + count) % count;
-        return real;
-    }
-
-    heroImage.on('changed.owl.carousel translated.owl.carousel', function (event) {
-        var r = realIndexFromEvent(event);
-        heroText.trigger('to.owl.carousel', [r, 600, true]);
-    });
-
-    heroText.on('changed.owl.carousel translated.owl.carousel', function (event) {
-        var r = realIndexFromEvent(event);
-        heroImage.trigger('to.owl.carousel', [r, 600, true]);
-    });
-
     // ==========================
     // Testimonials carousel
     // ==========================
@@ -96,3 +76,28 @@
 
 })(jQuery);
 
+function startCounter() {
+  const counters = document.querySelectorAll(".count");
+
+  counters.forEach(counter => {
+    counter.innerText = "0";
+
+    const updateCounter = () => {
+      const target = +counter.getAttribute("data-target");
+      const current = +counter.innerText;
+      const increment = target / 150; // adjust speed
+
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCounter();
+  });
+}
+
+// Run when page loads
+window.onload = startCounter;
