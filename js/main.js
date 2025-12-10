@@ -124,3 +124,12 @@ function startCount() {
 }
 
 window.onload = startCount;
+
+
+// Modal functionality
+document.querySelectorAll(".team-desc").forEach(desc => {
+    let words = desc.innerText.trim().split(" ");
+    if (words.length > 20) {
+        desc.innerText = words.slice(0, 20).join(" ") + "...";
+    }
+});

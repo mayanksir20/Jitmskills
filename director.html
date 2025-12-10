@@ -72,32 +72,16 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
                             <div class="dropdown-menu bg-light mt-2">
                                 <a href="about.html" class="dropdown-item">About JITM Skills</a>
-                                <a href="Director.html" class="dropdown-item">Director’s Message</a>
-                                <a href="#" class="dropdown-item">Leadership & Team</a>
-                                <a href="#" class="dropdown-item">Our Centers</a>
-                                <a href="#" class="dropdown-item">Why Choose Us</a>
+                                <a href="director.html" class="dropdown-item">Director’s Message</a>
+                                <a href="leadership-team.html" class="dropdown-item">Leadership & Team</a>
+                                <a href="Our-centers.html" class="dropdown-item">Our Centers</a>
+                                <a href="why-choose-us.html" class="dropdown-item">Why Choose Us</a>
                             </div>
                         </div>
 
                         <!-- 3. PROGRAMS -->
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Programs</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a class="dropdown-item dropdown-toggle" href="#">Government Schemes</a>
-                                <div class="dropdown-menu bg-light ms-0 mt-0">
-                                    <a href="#" class="dropdown-item">DDU-GKY</a>
-                                    <a href="#" class="dropdown-item">PMKVY</a>
-                                    <a href="#" class="dropdown-item">PMKK</a>
-                                    <a href="#" class="dropdown-item">NULM</a>
-                                    <a href="#" class="dropdown-item">MANAS / Seekho Aur Kamao</a>
-                                    <a href="#" class="dropdown-item">State Skill Missions (UKSDM, others)</a>
-                                </div>
-                                <a href="#" class="dropdown-item">CSR Projects</a>
-                                <a href="#" class="dropdown-item">Entrepreneurship Training (ESDP / EDP – NIESBUD)</a>
-                                <a href="#" class="dropdown-item">Placement & Apprenticeship Support</a>
-                                <a href="#" class="dropdown-item">Skill Development Initiatives</a>
-                            </div>
-                        </div>
+                        <a href="programs.html" class="nav-item nav-link">Programs</a>
+                       
 
                         <!-- 4. SECTORS & COURSES -->
                         <div class="nav-item dropdown">
@@ -338,28 +322,51 @@
 
 
     <!-- Newsletter Start -->
-    <div class="container-fluid bg-primary newsletter p-0">
+    <section class="container-fluid bg-primary newsletter p-0">
         <div class="container p-0">
-            <div class="row g-0 align-items-center">
+            <div class="row m-0 p-0 g-0 align-items-center">
+
+                <!-- IMAGE -->
                 <div class="col-md-5 ps-lg-0 text-start wow fadeIn" data-wow-delay="0.2s">
-                    <img class="img-fluid w-100" src="img/newsletter.jpg" alt="">
+                    <img class="img-fluid w-100" src="img/newslatter-img.jpg" alt="JITM Skills Newsletter">
                 </div>
+
+                <!-- CONTENT -->
                 <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-5">
-                        <h1 class="mb-5">Subscribe the <span
-                                class="text-uppercase text-primary bg-white px-2">Newsletter</span></h1>
-                        <div class="position-relative w-100 mb-2">
-                            <input class="form-control border-0 w-100 ps-4 pe-5" type="text"
-                                placeholder="Enter Your Email" style="height: 60px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
-                                    class="fa fa-paper-plane text-primary fs-4"></i></button>
-                        </div>
-                        <p class="mb-0">Diam sed sed dolor stet amet eirmod</p>
+                        <h1 class="mb-3">
+                            Subscribe to the
+                            <span class="text-uppercase text-primary bg-white px-2">JITM Skills Newsletter</span>
+                        </h1>
+
+                        <p class="lead mb-4 text-dark-50" style="max-width:700px;">
+                            Get free updates on government & CSR training programs, upcoming batches, placement drives,
+                            entrepreneurship workshops and success stories — delivered to your inbox monthly.
+                        </p>
+
+                        <form id="newsletterForm" class="d-flex align-items-center" novalidate>
+                            <label for="newsletterEmail" class="visually-hidden">Enter your email</label>
+                            <input id="newsletterEmail" name="email" type="email"
+                                class="form-control border-0 w-100 ps-4 pe-5"
+                                placeholder="Enter your email (example@domain.com)" style="height:60px;" required>
+                            <button type="submit" class="btn btn-white-subscribe shadow-none position-relative ms-3"
+                                aria-label="Subscribe to JITM newsletter">
+                                <i class="fa fa-paper-plane text-primary fs-4"></i>
+                                <span class="d-none d-md-inline ms-2">Subscribe</span>
+                            </button>
+                        </form>
+
+                        <p class="mt-3 mb-0 small text-dark-50" style="max-width:700px;">
+                            We respect your privacy. Your email will only be used to send JITM Skills updates and
+                            occasional partnership opportunities. Unsubscribe anytime. Need help? <a href="contact.html"
+                                class="text-primary">Contact us</a>.
+                        </p>
                     </div>
                 </div>
+
             </div>
         </div>
-    </div>
+    </section>
     <!-- Newsletter End -->
 
 
