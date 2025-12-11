@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tax Invoice</title>
+
+    <style>
+        body {
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+            margin: 0;
+            background: #f6f8fb;
+            color: #222
+        }
+
+        .invoice-wrap {
+            max-width: 900px;
+            margin: 32px auto;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(12, 20, 40, 0.08)
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 36px;
+            border-bottom: 1px solid #eef0f6
+        }
+
+        .brand {
+            display: flex;
+            gap: 14px;
+            align-items: center
+        }
+
+        .brand img {
+            height: 30px;
+            border-radius: 8px;
+            object-fit: cover
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 20px;
+            color: #0d47a1
+        }
+
+        .invoice-meta {
+            font-size: 14px;
+            color: #555;
+            text-align: right
+        }
+
+        .invoice-body {
+            padding: 28px 36px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 18px
+        }
+
+        .box {
+            background: #fbfcff;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #f0f3fa
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px
+        }
+
+        th,
+        td {
+            padding: 10px 8px;
+            text-align: left;
+            border-bottom: 1px solid #f0f3fa
+        }
+
+        th {
+            background: #fafbff;
+            font-weight: 700;
+            color: #333
+        }
+
+        .right {
+            text-align: right
+        }
+
+        .totals {
+            margin-top: 14px;
+            display: flex;
+            justify-content: flex-end
+        }
+
+        .totals table {
+            width: 360px
+        }
+
+        .note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 18px
+        }
+
+        .btn-row {
+            display: flex;
+            justify-content: flex-end;
+            padding: 18px 36px;
+            border-top: 1px dashed #eef2fa
+        }
+
+        .btn {
+            background: #0d6efd;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        @media(max-width:700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .invoice-meta {
+                text-align: left;
+                margin-top: 12px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="invoice-wrap">
+
+        <!-- header -->
+        <div class="invoice-header">
+            <div class="brand">
+                <img src="img/htmlcodex-2x.png" alt="HTML Codex Logo" />
+                <div>
+                    <div class="title">HTMLCodex (Seller)</div>
+                    <div style="font-size:13px;color:#666">Website: https://htmlcodex.com/</div>
+                    <div style="font-size:13px;color:#666">Foreign Digital Goods Seller</div>
+                </div>
+            </div>
+
+            <div class="invoice-meta">
+                <div style="font-weight:700">TAX INVOICE</div>
+                <div>Invoice #: <strong>HCX-ISTUDIO-3025</strong></div>
+                <div>Date: <strong>30-Nov-2025</strong></div>
+                <div>Place of Supply: Uttar Pradesh</div>
+            </div>
+        </div>
+
+        <!-- body -->
+        <div class="invoice-body">
+
+            <div class="grid">
+
+                <!-- Buyer -->
+                <div class="box">
+                    <strong>Billed To</strong>
+                    <div style="margin-top:8px;color:#444"><strong>JITM Skills Pvt. Ltd.</strong></div>
+
+                    <div style="font-size:13px;color:#666;margin-top:6px">
+                        D-87, D Block, Sector 2<br />
+                        Noida, Uttar Pradesh — 201301<br />
+                        India
+                    </div>
+
+                    <div style="font-size:13px;color:#666;margin-top:6px">
+                        GSTIN: <strong>— Under RCM</strong>
+                    </div>
+                </div>
+
+                <!-- Payment info -->
+                <div class="box">
+                    <strong>Payment / Conversion Info</strong>
+
+                    <div style="margin-top:8px;color:#444">Original currency: <strong>USD</strong></div>
+
+                    <div style="font-size:13px;color:#666;margin-top:6px">
+                        Template Price (USD): <strong>$38.00</strong>
+                    </div>
+
+                    <div style="font-size:13px;color:#666;margin-top:6px">
+                        Conversion Rate Used: <strong>1 USD = ₹89.95</strong>
+                    </div>
+
+                    <div style="font-size:13px;color:#666;margin-top:6px">
+                        Converted Value: <strong>₹3418.10</strong>
+                    </div>
+
+                    <div style="font-size:13px;color:#666;margin-top:6px">
+                        Tax Applicability: <strong>IGST under Reverse Charge</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- items -->
+            <table aria-label="Invoice items">
+                <thead>
+                    <tr>
+                        <th>Item & Description</th>
+                        <th style="width:120px">Qty</th>
+                        <th style="width:140px" class="right">Unit (INR)</th>
+                        <th style="width:160px" class="right">Amount (INR)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>iStudio — Interior Design Template (Pro Multiple License)</strong><br />
+                            <small style="color:#666">Digital product downloaded from HTMLCodex</small>
+                        </td>
+
+                        <td>1</td>
+                        <td class="right">₹3,418.10</td>
+                        <td class="right">₹3,418.10</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- totals -->
+            <div class="totals">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td class="right">₹3,418.10</td>
+                        </tr>
+                        <tr>
+                            <td>IGST @18% (RCM)</td>
+                            <td class="right">₹615.26</td>
+                        </tr>
+
+                        <tr style="font-weight:700">
+                            <td>Total Payable (INR)</td>
+                            <td class="right">₹4,033.36</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note">
+                <strong>Notes:</strong>
+                <ul>
+                    <li>HTMLCodex is a foreign seller — hence GST is payable by the buyer under Reverse Charge
+                        Mechanism.</li>
+                    <li>No GST was charged on invoice; JITM Skills must self-assess IGST @18%.</li>
+                    <li>Conversion Rate Used: 1 USD = ₹89.95.</li>
+                    <li>This is a valid commercial invoice for company accounting.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="btn-row">
+            <a class="btn" href="#" onclick="window.print();return false;">Print Invoice</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

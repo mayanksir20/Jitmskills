@@ -1434,10 +1434,9 @@ ul {
   }
 }
 
-
 /* --why-choose  */
 .why-choose {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .choose-section {
   min-height: 500px;
@@ -1446,12 +1445,36 @@ ul {
   max-height: 400px;
   object-fit: cover;
 }
-@media(max-width:992px) {
+@media (max-width: 992px) {
   .choose-section {
-    text-align:center;
+    text-align: center;
   }
   .choose-section .col-lg-6 {
     order: unset !important;
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
   }
+}
+
+/* Programs */
+
+.program-item-card {
+  border-radius: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.program-item-card .text-center img {
+  height: 220px; /* same image height */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.program-item-card ul {
+  margin-top: auto;
+  padding-left: 0px !important;
+}
+.program-content{
+  padding: 15px 20px;
 }
