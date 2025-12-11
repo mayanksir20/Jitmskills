@@ -1367,7 +1367,7 @@ ul {
 /* IMAGE */
 .team-h-img img {
   width: 140px;
-  height: 140px; /* Fixed height */
+  height: 180px; /* Fixed height */
   object-fit: cover;
   border-radius: 10px;
 }
