@@ -570,7 +570,7 @@
   animation-name: fadeIn;
 }
 
-@keyframes fadeInDown {
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
@@ -582,11 +582,11 @@
   }
 }
 
-.fadeInDown {
-  animation-name: fadeInDown;
+.fadeIn {
+  animation-name: fadeIn;
 }
 
-@keyframes fadeInDownBig {
+@keyframes fadeInBig {
   from {
     opacity: 0;
     transform: translate3d(0, -2000px, 0);
@@ -598,11 +598,11 @@
   }
 }
 
-.fadeInDownBig {
-  animation-name: fadeInDownBig;
+.fadeInBig {
+  animation-name: fadeInBig;
 }
 
-@keyframes fadeInLeft {
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
@@ -614,11 +614,11 @@
   }
 }
 
-.fadeInLeft {
-  animation-name: fadeInLeft;
+.fadeIn {
+  animation-name: fadeIn;
 }
 
-@keyframes fadeInLeftBig {
+@keyframes fadeInBig {
   from {
     opacity: 0;
     transform: translate3d(-2000px, 0, 0);
@@ -630,11 +630,11 @@
   }
 }
 
-.fadeInLeftBig {
-  animation-name: fadeInLeftBig;
+.fadeInBig {
+  animation-name: fadeInBig;
 }
 
-@keyframes fadeInRight {
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translate3d(100%, 0, 0);
@@ -646,11 +646,11 @@
   }
 }
 
-.fadeInRight {
-  animation-name: fadeInRight;
+.fadeIn {
+  animation-name: fadeIn;
 }
 
-@keyframes fadeInRightBig {
+@keyframes fadeInBig {
   from {
     opacity: 0;
     transform: translate3d(2000px, 0, 0);
@@ -662,11 +662,11 @@
   }
 }
 
-.fadeInRightBig {
-  animation-name: fadeInRightBig;
+.fadeInBig {
+  animation-name: fadeInBig;
 }
 
-@keyframes fadeInUp {
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
@@ -678,11 +678,11 @@
   }
 }
 
-.fadeInUp {
-  animation-name: fadeInUp;
+.fadeIn {
+  animation-name: fadeIn;
 }
 
-@keyframes fadeInUpBig {
+@keyframes fadeInBig {
   from {
     opacity: 0;
     transform: translate3d(0, 2000px, 0);
@@ -694,8 +694,8 @@
   }
 }
 
-.fadeInUpBig {
-  animation-name: fadeInUpBig;
+.fadeInBig {
+  animation-name: fadeInBig;
 }
 
 @keyframes fadeOut {
@@ -1473,7 +1473,7 @@
   animation-name: slideInDown;
 }
 
-@keyframes slideInLeft {
+@keyframes fadeIn {
   from {
     transform: translate3d(-100%, 0, 0);
     visibility: visible;
@@ -1484,11 +1484,11 @@
   }
 }
 
-.slideInLeft {
-  animation-name: slideInLeft;
+.fadeIn {
+  animation-name: fadeIn;
 }
 
-@keyframes slideInRight {
+@keyframes fadeIn {
   from {
     transform: translate3d(100%, 0, 0);
     visibility: visible;
@@ -1499,8 +1499,8 @@
   }
 }
 
-.slideInRight {
-  animation-name: slideInRight;
+.fadeIn {
+  animation-name: fadeIn;
 }
 
 @keyframes slideInUp {
