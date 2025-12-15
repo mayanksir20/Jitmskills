@@ -646,7 +646,7 @@ ul {
   box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
 }
 .contact-box {
-  border-left: 4px solid #0d6efd;
+  border-left: 4px solid #0d6b68;
 }
 
 .service-item {
@@ -719,12 +719,12 @@ ul {
 }
 
 .team-left {
-  border-left: 5px solid #0d6efd;
+  border-left: 5px solid #0d6b68;
   flex-direction: row;
 }
 
 .team-right {
-  border-right: 5px solid #0d6efd;
+  border-right: 5px solid #0d6b68;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -733,7 +733,7 @@ ul {
   width: 250px;
   height: 250px;
   object-fit: cover;
-  border: 3px solid #0d6efd;
+  border: 3px solid #0d6b68;
   border-radius: 8px;
 }
 
@@ -761,7 +761,7 @@ ul {
     /* text-align: center; */
     border-left: none;
     border-right: none;
-    border-top: 5px solid #0d6efd;
+    border-top: 5px solid #0d6b68;
     padding-top: 20px;
   }
   .manav-photo-2 {
