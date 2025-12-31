@@ -133,3 +133,24 @@ document.querySelectorAll(".team-desc").forEach(desc => {
         desc.innerText = words.slice(0, 20).join(" ") + "...";
     }
 });
+
+
+// -----counting-numbers-placement-hoglight-page-----
+const counters = document.querySelectorAll('.counter');
+const speed = 150;
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = Math.ceil(target / speed);
+
+        if (count < target) {
+            counter.innerText = count + inc;
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    updateCount();
+});
