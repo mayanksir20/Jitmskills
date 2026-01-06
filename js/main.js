@@ -97,8 +97,6 @@
 })(jQuery);
 
 
-
-
 // Hero Section - Counter Up
 function startCount() {
     const counters = document.querySelectorAll(".count");
