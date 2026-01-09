@@ -152,3 +152,30 @@ counters.forEach(counter => {
     };
     updateCount();
 });
+
+
+
+
+// ---news-----
+
+function openNews(element) {
+    const cardBody = element.parentElement;
+    const title = cardBody.querySelector('h5').innerText;
+    const fullContent = cardBody.querySelector('.news-full').innerHTML;
+
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalBody').innerHTML = fullContent;
+
+    var myModal = new bootstrap.Modal(document.getElementById('newsModal'));
+    myModal.show();
+}
+
+
+const slides = document.querySelectorAll(".spotlight-feature");
+let currentSlide = 0;
+
+setInterval(() => {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+}, 5000);
