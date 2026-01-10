@@ -208,3 +208,58 @@ document.addEventListener("DOMContentLoaded", function () {
     // Reverse order so latest added news shows first
     newsItems.reverse().forEach(item => container.appendChild(item));
 });
+
+
+
+// Gallery Filtering
+let activeCategory = 'all';
+let visibleCountLimit = 9; // Initial limit
+const loadStep = 4;        // Increment step
+
+window.onload = () => {
+    updateGalleryDisplay();
+};
+
+function filter(cat, element) {
+    document.querySelectorAll('.roadmap-step').forEach(step => step.classList.remove('active'));
+    element.classList.add('active');
+
+    activeCategory = cat;
+    visibleCountLimit = 9; // Category change hone par reset
+    updateGalleryDisplay();
+}
+
+function loadMore() {
+    visibleCountLimit += loadStep;
+    updateGalleryDisplay();
+}
+
+function updateGalleryDisplay() {
+    const allImages = document.querySelectorAll('.filter-item');
+    const btn = document.getElementById('view-more-btn');
+    let matchingImagesCount = 0;
+    let currentlyShownCount = 0;
+
+    allImages.forEach(img => {
+        img.classList.remove('show-anim');
+        if (activeCategory === 'all' || img.classList.contains(activeCategory)) {
+            matchingImagesCount++;
+            if (currentlyShownCount < visibleCountLimit) {
+                img.classList.add('show-anim');
+                currentlyShownCount++;
+            }
+        }
+    });
+
+    // Button Disable Logic
+    if (currentlyShownCount >= matchingImagesCount) {
+        btn.innerHTML = "No More Photos";
+        btn.classList.add('disabled-btn');
+        btn.disabled = true; // Button click hona band ho jayega
+    } else {
+        btn.innerHTML = "View More";
+        btn.classList.remove('disabled-btn');
+        btn.disabled = false;
+        btn.style.display = 'inline-block';
+    }
+}
