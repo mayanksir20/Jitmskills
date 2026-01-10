@@ -217,8 +217,15 @@
     <div class="container pb-5">
         <div class="row m-0 p-0 g-4">
             <div class="col-lg-8">
-                <div class="row m-0 p-0 g-4">
-                    <div class="col-md-6">
+                <div class="row m-0 p-0 g-4" id="newsContainer">
+                    <!-- ===================== IMPORTANT RULE ===================== -->
+
+                    <!-- RULE 1: 👉 ALWAYS place OLD NEWS at the top / (news that is older / published earlier) -->
+
+                    <!-- RULE 2: 👉 Apply the class / class="extra-news d-none" / ONLY to OLD NEWS
+                    extra-news = used for View More functionality / d-none = hidden on initial page load -->
+
+                    <div class="col-md-6 extra-news d-none">
                         <div class="card news-card">
                             <div class="news-image-wrapper">
                                 <span class="category-tag">Placement</span>
@@ -242,7 +249,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 extra-news d-none">
                         <div class="card news-card">
                             <div class="news-image-wrapper">
                                 <span class="category-tag">Inauguration</span>
@@ -267,28 +274,62 @@
                     <div class="col-md-6">
                         <div class="card news-card">
                             <div class="news-image-wrapper">
-                                <span class="category-tag">Workshop</span>
-                                <img src="img/Entrepreneurship Workshop.png" alt="News">
+                                <span class="category-tag">PMKVY | Skill Development</span>
+                                <img src="img/PMKVY-Training.png" alt="PMKVY Skill Training">
                             </div>
+
                             <div class="card-body">
-                                <span class="news-date"><i class="far fa-calendar-alt me-1"></i> Feb 15, 2025</span>
-                                <h5 class="news-title">Entrepreneurship Workshop for Women in Haryana</h5>
+                                <span class="news-date"><i class="far fa-calendar-alt me-1"></i> March 05, 2025</span>
+
+                                <!-- Title in English / Hindi -->
+                                <h5 class="news-title">
+                                    PMKVY Initiative Empowers Rural Youth /
+                                    ग्रामीण युवाओं को सशक्त बनाने के लिए PMKVY पहल
+                                </h5>
+
+                                <!-- Summary on card (English + Hindi) -->
                                 <p class="text-muted small">
-                                    Focusing on "Self-Reliant India", JITM skills trained 50+ women in micro-business
-                                    management...
+                                    Under PMKVY, JITM Skills provides free skill training and placement support in
+                                    various sectors. /
+                                    PMKVY के तहत, JITM Skills विभिन्न क्षेत्रों में मुफ्त कौशल प्रशिक्षण और प्लेसमेंट
+                                    समर्थन प्रदान करता है।
                                 </p>
 
-                                <!-- 🔥 REQUIRED FOR POPUP -->
+                                <!-- Full content popup (English + Hindi) -->
                                 <div class="news-full d-none">
                                     <p>
-                                        The workshop focused on empowering women through entrepreneurship, covering
-                                        business planning, finance management, and digital marketing skills.
+                                        <strong>English:</strong><br>
+                                        The Pradhan Mantri Kaushal Vikas Yojana (PMKVY) is a flagship scheme by the
+                                        Government of India to promote skill development.
+                                        JITM Skills Pvt. Ltd. implements this program across multiple states, providing
+                                        training in Apparel, Retail, Electronics, Healthcare,
+                                        Agriculture, and Food Processing sectors. The program enables rural youth to
+                                        gain employable skills and access job opportunities.
+                                        <br><br>
+                                        Our trainers and mentors guide students with hands-on workshops, industry
+                                        exposure, and placement support to ensure successful career outcomes.
                                     </p>
-                                    <p><strong>Location:</strong> Gurugram, Haryana</p>
+
+                                    <p>
+                                        <strong>हिंदी:</strong><br>
+                                        प्रधानमंत्री कौशल विकास योजना (PMKVY) भारत सरकार की प्रमुख योजना है, जिसका
+                                        उद्देश्य कौशल विकास को बढ़ावा देना है।
+                                        JITM Skills Pvt. Ltd. इस कार्यक्रम को कई राज्यों में लागू करता है, जिसमें
+                                        परिधान, रिटेल, इलेक्ट्रॉनिक्स, हेल्थकेयर,
+                                        कृषि और खाद्य प्रसंस्करण क्षेत्रों में प्रशिक्षण प्रदान किया जाता है। यह
+                                        कार्यक्रम ग्रामीण युवाओं को रोजगार योग्य कौशल प्राप्त करने और
+                                        नौकरी के अवसर प्राप्त करने में सक्षम बनाता है।
+                                        <br><br>
+                                        हमारे प्रशिक्षक और मेंटर छात्रों को व्यावहारिक कार्यशालाओं, उद्योग एक्सपोज़र और
+                                        प्लेसमेंट समर्थन के माध्यम से मार्गदर्शन करते हैं,
+                                        ताकि सफल करियर परिणाम सुनिश्चित हो सकें।
+                                    </p>
+
+                                    <p><strong>Sector / सेक्टर:</strong> Skill Development / कौशल विकास</p>
                                 </div>
 
                                 <a href="#" class="read-more-btn" onclick="openNews(this)">
-                                    विस्तार से पढ़ें ➜<i class="fas fa-arrow  m-0 p-0-right"></i>
+                                    Read Full Story ➜
                                 </a>
                             </div>
                         </div>
@@ -298,33 +339,184 @@
                     <div class="col-md-6">
                         <div class="card news-card">
                             <div class="news-image-wrapper">
-                                <span class="category-tag">MoU</span>
-                                <img src="img/JITM Signs MoU.png" alt="News">
+                                <span class="category-tag">Skill Training | MoU</span>
+                                <img src="img/JITM-Skill-Training.png" alt="JITM Skill Training">
                             </div>
+
                             <div class="card-body">
                                 <span class="news-date"><i class="far fa-calendar-alt me-1"></i> Jan 20, 2025</span>
-                                <h5 class="news-title">JITM Signs MoU with NSDC for Advanced Logistics Training</h5>
+
+                                <!-- Title in English / Hindi -->
+                                <h5 class="news-title">
+                                    JITM Signs MoU with NSDC for Advanced Logistics Training /
+                                    JITM ने NSDC के साथ एडवांस्ड लॉजिस्टिक्स ट्रेनिंग के लिए समझौता किया
+                                </h5>
+
+                                <!-- Summary on card (English + Hindi) -->
                                 <p class="text-muted small">
-                                    A major step towards closing the skill gap in India's logistics and supply chain
-                                    sector...
+                                    JITM Skills Pvt. Ltd. is bridging the skill gap in India's logistics and supply
+                                    chain sector
+                                    through advanced training programs. /
+                                    JITM Skills Pvt. Ltd. भारत में लॉजिस्टिक्स और सप्लाई चेन सेक्टर में कौशल अंतर को
+                                    एडवांस ट्रेनिंग प्रोग्राम्स के माध्यम से कम कर रहा है।
                                 </p>
 
-                                <!-- 🔥 REQUIRED FOR POPUP -->
+                                <!-- Full content popup (English + Hindi) -->
                                 <div class="news-full d-none">
                                     <p>
-                                        This MoU aims to introduce advanced logistics and supply chain training programs
-                                        aligned with industry demand and NSDC standards.
+                                        <strong>English:</strong><br>
+                                        JITM Skills Pvt. Ltd. is a pioneer in skill development and has been running
+                                        training programs across India since 2013.
+                                        As a NSDC Training Partner with pan-India presence, JITM provides free courses
+                                        and placement-linked skill training in Apparel,
+                                        Organized Retail, Electronics, Healthcare, Food Processing, Agriculture, and
+                                        more.
+                                        <br><br>
+                                        This MoU with NSDC aims to introduce advanced logistics and supply chain
+                                        training programs aligned with industry demands and standards.
+                                        JITM has successfully trained over 10,00,000 students, empowering youth for
+                                        employment and self-employment while serving society.
                                     </p>
-                                    <p><strong>Sector:</strong> Logistics & Supply Chain</p>
+
+                                    <p>
+                                        <strong>हिंदी:</strong><br>
+                                        JITM Skills Pvt. Ltd. कौशल विकास में अग्रणी है और 2013 से भारत भर में प्रशिक्षण
+                                        कार्यक्रम चला रहा है।
+                                        NSDC प्रशिक्षण साझेदार के रूप में, JITM मुफ्त पाठ्यक्रम और रोजगार-संबंधित कौशल
+                                        प्रशिक्षण प्रदान करता है, जैसे कि परिधान,
+                                        संगठित रिटेल, इलेक्ट्रॉनिक्स, हेल्थकेयर, खाद्य प्रसंस्करण, कृषि आदि।
+                                        <br><br>
+                                        NSDC के साथ यह MoU उद्योग की मांग और मानकों के अनुसार एडवांस्ड लॉजिस्टिक्स और
+                                        सप्लाई चेन प्रशिक्षण कार्यक्रम शुरू करने का उद्देश्य रखता है।
+                                        JITM ने अब तक 10,00,000+ छात्रों को प्रशिक्षित किया है, जिससे युवा रोजगार और
+                                        स्वरोजगार के लिए सशक्त होते हैं और समाज की सेवा करते हैं।
+                                    </p>
+
+                                    <p><strong>Sector / सेक्टर:</strong> Logistics & Supply Chain / लॉजिस्टिक्स और
+                                        सप्लाई चेन</p>
                                 </div>
 
                                 <a href="#" class="read-more-btn" onclick="openNews(this)">
-                                    Read Full Story ➜<i class="fas fa-arrow  m-0 p-0-right"></i>
+                                    Read Full Story ➜
                                 </a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- add more news items here as needed -->
+
+                    <!-- RULE 3: 👉 Place LATEST / NEW NEWS / AT THE VERY BOTTOM
+                    Never apply 👉  extra-news or d-none / to latest news -->
+
+                    <div class="col-md-6">
+                        <div class="card news-card">
+                            <div class="news-image-wrapper">
+                                <span class="category-tag">Award</span>
+                                <img src="img/Award.png" alt="News">
+                            </div>
+                            <div class="card-body">
+                                <span class="news-date"><i class="far fa-calendar-alt me-1"></i> April 02, 2025</span>
+                                <h5 class="news-title">JITM Skills Honoured for Excellence in Skill Training</h5>
+                                <p class="text-muted small">
+                                    Recognized for outstanding contribution in youth employability across multiple
+                                    states...
+                                </p>
+                                <div class="news-full d-none">
+                                    <p>JITM Skills received recognition at a national-level skill conclave for impactful
+                                        skilling programs.</p>
+                                </div>
+                                <a href="#" class="read-more-btn" onclick="openNews(this)">Read Full Story ➜</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card news-card">
+                            <div class="news-image-wrapper">
+                                <span class="category-tag">MSME | RAMP</span>
+                                <img src="img/goa-project.png" alt="MSME RAMP Goa">
+                            </div>
+
+                            <div class="card-body">
+                                <span class="news-date">
+                                    <i class="far fa-calendar-alt me-1"></i> April 2025
+                                </span>
+
+                                <h5 class="news-title">
+                                    JITM Skills Implements MSME–RAMP Initiative with DITC Goa / JITM Skills ने DITC गोवा
+                                    के साथ MSME–RAMP योजना लागू की
+                                </h5>
+
+                                <p class="text-muted small">
+                                    JITM Skills Pvt. Ltd. is implementing a flagship MSME–RAMP initiative
+                                    under the Directorate of Industries, Trade & Commerce (DITC),
+                                    Government of Goa, to strengthen the MSME ecosystem through
+                                    facilitation centres and expert support...
+                                </p>
+
+                                <div class="news-full d-none">
+                                    <p>
+                                        <strong>English:</strong><br>
+                                        JITM Skills Pvt. Ltd. is executing a flagship initiative of the Ministry of MSME
+                                        under the Directorate of Industries, Trade & Commerce (DITC),
+                                        Government of Goa, aimed at strengthening the MSME ecosystem.
+                                        <br><br>
+                                        Under the Raising and Accelerating MSME Performance (RAMP) program,
+                                        DITC has established two dedicated support mechanisms:
+                                        <strong>Business Facilitation Centers (BFC)</strong> and
+                                        <strong>Women Entrepreneurship Facilitation Cell (WEFC)</strong>.
+                                        <br><br>
+                                        These centres provide structured handholding support to entrepreneurs
+                                        through improved access to government schemes, compliance assistance,
+                                        market linkages, and mentoring.
+                                        <br><br>
+                                        Expert teams deputed by JITM Skills comprise professionals from finance,
+                                        business development, entrepreneurship, legal & compliance,
+                                        environment, exports, and IT domains, working collectively to mentor MSMEs
+                                        across the state of Goa.
+                                    </p>
+
+                                    <hr>
+
+                                    <p>
+                                        <strong>हिंदी:</strong><br>
+                                        JITM Skills Pvt. Ltd. द्वारा MSME मंत्रालय की प्रमुख योजना को
+                                        उद्योग, व्यापार एवं वाणिज्य निदेशालय (DITC),
+                                        गोवा सरकार के अंतर्गत सफलतापूर्वक लागू किया जा रहा है।
+                                        <br><br>
+                                        इस पहल का उद्देश्य MSME पारिस्थितिकी तंत्र को सुदृढ़ बनाना है,
+                                        जिसके अंतर्गत उद्यमियों को सरकारी योजनाओं तक बेहतर पहुंच,
+                                        अनुपालन सहायता और बाज़ार से जोड़ने की सुविधा प्रदान की जाती है।
+                                        <br><br>
+                                        Raising and Accelerating MSME Performance (RAMP) कार्यक्रम के अंतर्गत,
+                                        DITC द्वारा दो समर्पित केंद्र स्थापित किए गए हैं:
+                                        <strong>बिजनेस फैसिलिटेशन सेंटर (BFC)</strong> एवं
+                                        <strong>महिला उद्यमिता फैसिलिटेशन सेल (WEFC)</strong>।
+                                        <br><br>
+                                        JITM Skills की विशेषज्ञ टीम — जिसमें वित्त, व्यवसाय विकास,
+                                        उद्यमिता, कानूनी, पर्यावरण, निर्यात एवं आईटी क्षेत्र के
+                                        विशेषज्ञ शामिल हैं — राज्य भर के उद्यमियों को मार्गदर्शन
+                                        एवं सहयोग प्रदान कर रही है।
+                                    </p>
+                                </div>
+
+                                <a href="#" class="read-more-btn" onclick="openNews(this)">
+                                    Read Full Story ➜
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- RULE 4:
+                The "View More" button will
+                reveal ONLY extra-news items
+                step-by-step -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-outline-success px-4" id="viewMoreBtn" onclick="loadMoreNews()">
+                        View More News ➜
+                    </button>
                 </div>
             </div>
 
@@ -410,13 +602,25 @@
                         </div>
                     </div>
 
-                    <div class="m-3 p-4 text-center text-white rounded shadow-sm"
-                        style="background: linear-gradient(45deg, var(--jitm-green), #14a09c);">
-                        <i class="fas fa-video fa-2x mb-2"></i>
+                    <div class="p-3 text-center text-white rounded shadow-sm">
+                        <i class="fab fa-youtube text-danger fa-3x mb-2"></i>
                         <h5>Watch Live Coverage</h5>
-                        <p class="small">Our YouTube channel featuring student success stories.</p>
-                        <a href="#" class="btn btn-sm btn-light text-dark fw-bold">Watch Now</a>
+                        <p class="small text-primary">Our YouTube channel featuring student success stories.</p>
+
+                        <div class="ratio ratio-16x9 mt-3 rounded overflow-hidden shadow">
+                            <iframe
+                                src="https://www.youtube.com/embed/videoseries?list=UUxMbQA7yrFum0AmLLdx4yWg&autoplay=1&mute=1&loop=1"
+                                title="JITM Skills YouTube" frameborder="0" allow="autoplay; encrypted-media"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <a href="https://www.youtube.com/@jitmskills1080/videos" target="_blank"
+                            class="btn btn-sm btn-light text-dark fw-bold mt-3">
+                            <i class="fab fa-youtube text-danger fa-1 px-2 mb-2"></i> Visit Channel ➜
+                        </a>
                     </div>
+
                 </div>
             </div>
         </div>

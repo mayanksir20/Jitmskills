@@ -179,3 +179,32 @@ setInterval(() => {
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add("active");
 }, 5000);
+
+
+// view-more-news.js
+const step = 2;
+
+function loadMoreNews() {
+    const hiddenNews = document.querySelectorAll('.extra-news.d-none');
+
+    // OLD NEWS pehle open hogi
+    for (let i = 0; i < step && i < hiddenNews.length; i++) {
+        hiddenNews[i].classList.remove('d-none');
+    }
+
+    if (document.querySelectorAll('.extra-news.d-none').length === 0) {
+        const btn = document.getElementById('viewMoreBtn');
+        btn.innerText = 'No More News';
+        btn.disabled = true;
+    }
+}
+
+
+// Reverse news order on page load
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("newsContainer");
+    const newsItems = Array.from(container.children);
+
+    // Reverse order so latest added news shows first
+    newsItems.reverse().forEach(item => container.appendChild(item));
+});
