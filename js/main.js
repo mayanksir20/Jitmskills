@@ -263,3 +263,124 @@ function updateGalleryDisplay() {
         btn.style.display = 'inline-block';
     }
 }
+
+
+
+// --- gallery tv Ticker Logic ---
+const titles = [
+    "Skill Training से **Job** तक का सफर – Real Student Feedback",
+    "Free Course ने बदल दी मेरी **Life** | Learner Review",
+    "गाँव से **City Job** तक – An Inspiring Success Story",
+    "Training के बाद **Placement मिला** | JITM Skills Experience",
+    "**Skill India Program** – Real Stories, Real Results",
+    "मुझे Training के बाद **Job मिली** – Candidate Feedback",
+    "**Employer Review** – Skilled Candidates का Real Experience",
+    "**Certificate Day** | Proud Moments & Career Growth",
+    "**रोज़गार Opportunity** – Skills से Success की कहानी",
+    "From Learning to **Earning** – हमारे Students की Real Journey"
+];
+
+const contents = document.querySelectorAll(".ticker-content");
+
+contents.forEach(container => {
+    titles.forEach(title => {
+        const span = document.createElement("span");
+
+        // FIX: highlight support
+        span.innerHTML =
+            "▶ " + title.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+        container.appendChild(span);
+    });
+});
+
+
+
+// Lightbox and Filter Logic for Press Releases
+let hoverTimer;
+let currentItems = 9;
+let activeFilter = 'all';
+
+function startHoverTimer(element) {
+    hoverTimer = setTimeout(function () {
+        openLightbox(element);
+    }, 3000);
+}
+
+function cancelHoverTimer() {
+    clearTimeout(hoverTimer);
+}
+
+function openLightbox(element) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const clickedImgSrc = element.querySelector('img').src;
+
+    lightboxImg.src = clickedImgSrc;
+    lightbox.style.display = 'flex';
+    setTimeout(() => lightbox.classList.add('active'), 10);
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+    setTimeout(() => lightbox.style.display = 'none', 300);
+    document.body.style.overflow = 'auto';
+}
+
+function closeLightboxOverlay(e) {
+    if (e.target.id === 'lightbox') closeLightbox();
+}
+
+// Filter Logic
+function filterSelection(c) {
+    activeFilter = c;
+    const btns = document.querySelectorAll(".filter-btn");
+    btns.forEach(btn => {
+        btn.classList.remove("active");
+        if (btn.getAttribute('onclick').includes(`'${c}'`)) btn.classList.add("active");
+    });
+    currentItems = 9;
+    showFilteredItems();
+}
+
+function showFilteredItems() {
+    const items = document.querySelectorAll(".press-item");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+    const endMessage = document.getElementById("endMessage");
+
+    let matchCount = 0;
+    let displayedCount = 0;
+
+    items.forEach(item => {
+        item.classList.remove("active");
+        if (activeFilter === 'all' || item.classList.contains(activeFilter)) {
+            matchCount++;
+            if (displayedCount < currentItems) {
+                item.classList.add("active");
+                displayedCount++;
+            }
+        }
+    });
+
+    if (displayedCount >= matchCount) {
+        loadMoreBtn.style.display = "none";
+        endMessage.style.display = "block";
+    } else {
+        loadMoreBtn.style.display = "inline-block";
+        endMessage.style.display = "none";
+    }
+}
+
+function loadMore() {
+    currentItems += 9;
+    showFilteredItems();
+}
+
+document.addEventListener("DOMContentLoaded", showFilteredItems);
+
+function toggleFilterSidebar() {
+    const sidebar = document.querySelector('.media-sidebar');
+    sidebar.classList.toggle('show-filters');
+}
