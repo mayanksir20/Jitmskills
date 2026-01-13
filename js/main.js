@@ -301,54 +301,40 @@ let hoverTimer;
 let currentItems = 9;
 let activeFilter = 'all';
 
-function startHoverTimer(element) {
-    hoverTimer = setTimeout(function () {
-        openLightbox(element);
-    }, 3000);
-}
-
-function cancelHoverTimer() {
-    clearTimeout(hoverTimer);
-}
+function startHoverTimer(element) { hoverTimer = setTimeout(() => openLightbox(element), 3000); }
+function cancelHoverTimer() { clearTimeout(hoverTimer); }
 
 function openLightbox(element) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const clickedImgSrc = element.querySelector('img').src;
-
-    lightboxImg.src = clickedImgSrc;
-    lightbox.style.display = 'flex';
-    setTimeout(() => lightbox.classList.add('active'), 10);
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = element.querySelector('img').src;
+    lb.style.display = 'flex';
+    setTimeout(() => lb.classList.add('active'), 10);
     document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('active');
-    setTimeout(() => lightbox.style.display = 'none', 300);
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('active');
+    setTimeout(() => lb.style.display = 'none', 300);
     document.body.style.overflow = 'auto';
 }
 
-function closeLightboxOverlay(e) {
-    if (e.target.id === 'lightbox') closeLightbox();
-}
+function closeLightboxOverlay(e) { if (e.target.id === 'lightbox') closeLightbox(); }
 
-// Filter Logic
 function filterSelection(c) {
     activeFilter = c;
-    const btns = document.querySelectorAll(".filter-btn");
-    btns.forEach(btn => {
-        btn.classList.remove("active");
-        if (btn.getAttribute('onclick').includes(`'${c}'`)) btn.classList.add("active");
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute('onclick').includes(`'${c}'`));
     });
     currentItems = 9;
     showFilteredItems();
+    if (window.innerWidth <= 850) document.querySelector('.media-sidebar').classList.remove('show-filters');
 }
 
 function showFilteredItems() {
     const items = document.querySelectorAll(".press-item");
-    const loadMoreBtn = document.getElementById("loadMoreBtn");
-    const endMessage = document.getElementById("endMessage");
+    const btn = document.getElementById("loadMoreBtn");
+    const msg = document.getElementById("endMessage");
 
     let matchCount = 0;
     let displayedCount = 0;
@@ -364,23 +350,19 @@ function showFilteredItems() {
         }
     });
 
+    // Logic for Disable Button and Message
     if (displayedCount >= matchCount) {
-        loadMoreBtn.style.display = "none";
-        endMessage.style.display = "block";
+        btn.disabled = true; // Button disable ho jayega
+        btn.innerText = "No More Content"; // Text change ho jayega
+        msg.style.display = "block"; // Red message dikhega
     } else {
-        loadMoreBtn.style.display = "inline-block";
-        endMessage.style.display = "none";
+        btn.disabled = false;
+        btn.innerText = "View More Stories";
+        msg.style.display = "none";
     }
 }
 
-function loadMore() {
-    currentItems += 9;
-    showFilteredItems();
-}
+function loadMore() { currentItems += 9; showFilteredItems(); }
+function toggleFilterSidebar() { document.querySelector('.media-sidebar').classList.toggle('show-filters'); }
 
 document.addEventListener("DOMContentLoaded", showFilteredItems);
-
-function toggleFilterSidebar() {
-    const sidebar = document.querySelector('.media-sidebar');
-    sidebar.classList.toggle('show-filters');
-}
