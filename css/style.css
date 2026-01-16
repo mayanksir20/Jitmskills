@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
 }
 html,
 body {
@@ -2846,4 +2845,106 @@ ul {
 
 .border-gradient {
   border-left: 6px solid #1e3a8a;
+}
+
+/* ---career-section-css---  */
+.apply-card {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.required::after {
+  content: " *";
+  color: #dc3545;
+}
+
+/* SCROLLING JOB LIST */
+.job-container {
+  height: 500px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.job-scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+  animation: scrollUp 20s linear infinite;
+}
+
+.job-container:hover .job-scroll-wrapper {
+  animation-play-state: paused;
+}
+
+.job-container:hover {
+  overflow-y: auto;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.job-item {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  transition: 0.3s;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.job-item:hover {
+  background: #eef2ff;
+}
+
+/* MODAL CSS */
+.custom-modal-95 {
+  max-width: 95% !important;
+  width: 95%;
+  margin: 10px auto;
+}
+
+.modal-content {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  background: #eff6ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tracking-wider {
+  letter-spacing: 0.1em;
+}
+
+.benefit-list h6 {
+  color: #0b5b58;
 }

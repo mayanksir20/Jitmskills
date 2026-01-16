@@ -33,6 +33,18 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <style>
+        .custom-list li {
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .form-control:focus {
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.1);
+        }
+    </style>
 
 </head>
 
@@ -182,259 +194,106 @@
         </div>
     </div>
     <!-- Hero End -->
-    <section class="text-center py-5 mt-5 mb-4">
+
+    <section class="py-5" style="background: #ffffff;">
         <div class="container">
-            <h1 class="text-center">Career Opportunities <spam class="bg-light text-primary px-2">@ JITM Skills</spam>
-            </h1>
-            <p class="text-center fs-5 mt-3 text-muted">
-                Build a meaningful career with JITM Skills and be part of large-scale national skill development
-                initiatives.<br>
-                Work on government, CSR, and multi-state projects that create real social and economic impact.<br>
-                Grow professionally while contributing to India’s skilled and empowered workforce.
-            </p>
-
-        </div>
-    </section>
-
-    <!-- ---right-quick-apply-and-job-listing--- -->
-    <div class="bg-light p-5">
-        <div class="container mb-5">
-            <div class=" mt- mb-4">
-                <div class="row align-items-end">
-                    <div class="col-lg-8">
-                        <h1 class="text-dark mb-2">Step Into Your <spam class="bg-white text-primary px-2">Future</spam>
-                        </h1>
-                        <p class="text-muted mb-0" style="font-size: 0.95rem;">
-                            Looking for a career boost? Fill out our quick application form to get started.
-                            Our HR team reviews every profile carefully to match you with the best roles
-                            that fit your professional skills and aspirations.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="alert alert-info mt-4 border-0 shadow-sm d-flex align-items-center" role="alert"
-                    style="background: #eef2ff; border-left: 5px solid #1e3a8a !important;">
-                    <i class="fas fa-info-circle me-3 fs-4 text-primary"></i>
-                    <div>
-                        <strong class="text-dark">Candidate Guide:</strong>
-                        If you want to apply generally, please use the <strong>Quick Apply</strong> form on the left.
-                        Alternatively, you can explore specific roles under <strong>Current Openings</strong> on the
-                        right side
-                        and click 'Apply' to submit a detailed application for that particular post.
-                    </div>
-                </div>
-            </div>
             <div class="row g-4">
-                <div class="col-lg-8">
-                    <div class="card apply-card p-4">
-                        <h3 class="fw-bold mb-4"><i class="fas fa-edit me-2"></i>Quick Apply – <span
-                                class="bg-light text-primary px-2">Job
-                                Application</span></h3>
-                        <form class="careerForm" method="POST" enctype="multipart/form-data" action="">
+
+                <div class="col-lg-7">
+                    <div class="pe-lg-4">
+                        <h2 class="fw-bold mb-3" style="color: #1e3a8a;">Trainer & Faculty Positions</h2>
+                        <p class="text-secondary mb-5" style="font-size: 1.1rem;">
+                            We are always looking for skilled, motivated, and industry-experienced trainers to deliver
+                            high-quality training across sectors. Trainers at JITM Skills play a critical role in
+                            shaping learner outcomes and ensuring industry-ready skills.
+                        </p>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-3"><i
+                                        class="fas fa-chalkboard-teacher me-2"></i>Roles Include:</h5>
+                                <ul class="list-unstyled custom-list">
+                                    <li><i class="fas fa-check-circle me-2 text-success"></i> Technical Trainers</li>
+                                    <li><i class="fas fa-check-circle me-2 text-success"></i> Domain Experts</li>
+                                    <li><i class="fas fa-check-circle me-2 text-success"></i> Soft Skills &
+                                        Employability</li>
+                                    <li><i class="fas fa-check-circle me-2 text-success"></i> Digital Skills Trainers
+                                    </li>
+                                    <li><i class="fas fa-check-circle me-2 text-success"></i> Entrepreneurship Trainers
+                                    </li>
+                                    <li><i class="fas fa-check-circle me-2 text-success"></i> Assessors & Master
+                                        Trainers</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-3"><i class="fas fa-user-check me-2"></i>Who Can
+                                    Apply:</h5>
+                                <ul class="list-unstyled custom-list">
+                                    <li><i class="fas fa-caret-right me-2 text-primary"></i> Industry Experience</li>
+                                    <li><i class="fas fa-caret-right me-2 text-primary"></i> Certified (NSDC / SSC)</li>
+                                    <li><i class="fas fa-caret-right me-2 text-primary"></i> Passion for Teaching</li>
+                                    <li><i class="fas fa-caret-right me-2 text-primary"></i> Urban & Rural Willingness
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card shadow-lg border-0 p-4" style="border-radius: 20px; background: #f8fafc;">
+                        <div class="text-center mb-4">
+                            <h4 class="fw-bold text-dark mb-1">Apply as Trainer</h4>
+                            <p class="small text-muted">Submit your profile to our recruitment team</p>
+                        </div>
+
+                        <form class="careerForm" method="POST" enctype="multipart/form-data">
                             <div class="row g-3">
-                                <div class="col-md-12"><label class="form-label required">Designation</label><input
-                                        type="text" name="designation" class="form-control mainDesignation"
-                                        placeholder="Enter post name" required></div>
-                                <div class="col-md-6"><label class="form-label required">Full Name</label><input
-                                        type="text" name="fullname" class="form-control" required></div>
-                                <div class="col-md-6"><label class="form-label required">Contact No</label><input
-                                        type="tel" name="phone" class="form-control" required></div>
-                                <div class="col-md-6"><label class="form-label required">Email</label><input
-                                        type="email" name="email" class="form-control" required></div>
-                                <div class="col-md-6"><label class="form-label required">Qualification</label><input
-                                        type="text" name="qualification" class="form-control" required></div>
-                                <div class="col-md-6"><label class="form-label">Experience</label><input type="text"
-                                        name="experience" class="form-control"></div>
-                                <div class="col-md-6"><label class="form-label required">CV / Resume</label><input
-                                        type="file" name="resume" class="form-control" required></div>
-                                <div class="col-md-6"><label class="form-label required">Prev. Company</label><input
-                                        type="text" name="prev_company" class="form-control" required></div>
-                                <div class="col-md-6"><label class="form-label required">Prev. Designation</label><input
-                                        type="text" name="prev_designation" class="form-control" required></div>
-                                <div class="col-12"><button type="submit"
-                                        class="btn btn-primary w-100 py-2 fw-bold">SUBMIT
-                                        NOW</button></div>
+                                <div class="col-12">
+                                    <label class="form-label required">Specialization / Domain</label>
+                                    <input type="text" name="designation" class="form-control"
+                                        placeholder="e.g. IT Trainer, Soft Skills" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label required">Full Name</label>
+                                    <input type="text" name="fullname" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label required">Contact No</label>
+                                    <input type="tel" name="phone" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label required">Email</label>
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label required">CV / Resume (PDF/Doc)</label>
+                                    <input type="file" name="resume" class="form-control" required>
+                                </div>
+
+                                <div class="col-12 mt-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="noida_hq" id="trainerHq">
+                                        <label class="form-check-label small" for="trainerHq">Willing to travel for
+                                            training sessions.</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-3">
+                                    <button type="submit"
+                                        class="btn btn-primary w-100 py-3 fw-bold shadow-sm rounded-3">SUBMIT
+                                        PROFILE</button>
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                <div class="col-lg-4">
-                    <h5 class="fw-bold text-primary mb-3"><i class="fas fa-briefcase me-2"></i>Live Vacancies</h5>
-                    <div class="job-container">
-                        <div class="job-scroll-wrapper">
-                            <div class="job-item d-flex justify-content-between align-items-center">
-                                <div><strong class="d-block">MIS Executive</strong><small class="text-muted">Noida
-                                        HQ</small></div>
-                                <button class="btn btn-sm btn-outline-primary"
-                                    onclick="openApplyModal('MIS Executive')">Apply</button>
-                            </div>
-                            <div class="job-item d-flex justify-content-between align-items-center">
-                                <div><strong class="d-block">Center Manager</strong><small
-                                        class="text-muted">Bihar/Odisha</small></div>
-                                <button class="btn btn-sm btn-outline-primary"
-                                    onclick="openApplyModal('Center Manager')">Apply</button>
-                            </div>
-                            <div class="job-item d-flex justify-content-between align-items-center">
-                                <div><strong class="d-block">Soft Skill Trainer</strong><small
-                                        class="text-muted">Lucknow</small></div>
-                                <button class="btn btn-sm btn-outline-primary"
-                                    onclick="openApplyModal('Soft Skill Trainer')">Apply</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Job Application Modal -->
-    <div class="modal fade" id="applyModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog custom-modal-95">
-            <div class="modal-content border-0 shadow-lg">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title fw-bold">Full Application Form</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="careerForm" method="POST" enctype="multipart/form-data" action="">
-                        <div class="row g-3">
-                            <div class="col-md-12"><label class="form-label required">Applying For</label><input
-                                    type="text" name="designation" class="form-control mainDesignation" readonly
-                                    required></div>
-                            <div class="col-md-4"><label class="form-label required">Full Name</label><input type="text"
-                                    name="fullname" class="form-control" required></div>
-                            <div class="col-md-4"><label class="form-label required">Phone</label><input type="tel"
-                                    name="phone" class="form-control" required></div>
-                            <div class="col-md-4"><label class="form-label required">Email</label><input type="email"
-                                    name="email" class="form-control" required></div>
-                            <div class="col-md-4"><label class="form-label required">Qualification</label><input
-                                    type="text" name="qualification" class="form-control" required></div>
-                            <div class="col-md-4"><label class="form-label">Total Experience</label><input type="text"
-                                    name="experience" class="form-control"></div>
-                            <div class="col-md-4"><label class="form-label required">Upload CV</label><input type="file"
-                                    name="resume" class="form-control" required></div>
-                            <div class="col-md-6"><label class="form-label required">Current Company</label><input
-                                    type="text" name="prev_company" class="form-control" required></div>
-                            <div class="col-md-6"><label class="form-label required">Current Designation</label><input
-                                    type="text" name="prev_designation" class="form-control" required></div>
-                            <div class="col-md-6"><label class="form-label">Current Salary</label><input type="text"
-                                    name="current_salary" class="form-control"></div>
-                            <div class="col-md-6"><label class="form-label">Expected Salary</label><input type="text"
-                                    name="expected_salary" class="form-control"></div>
-                            <div class="col-12"><label class="form-label">Key Skills</label><textarea
-                                    name="work_details" class="form-control" rows="3"></textarea></div>
-                            <div class="col-12"><label class="form-label required">Reason for Job Change</label><input
-                                    type="text" name="change_reason" class="form-control" required></div>
-
-                            <div class="col-12 mt-3 p-3 bg-light rounded">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="noida_hq" id="noidaCheck">
-                                    <label class="form-check-label small" for="noidaCheck">Ready to work at Noida
-                                        HQ.</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="transfer_policy"
-                                        id="transferCheck">
-                                    <label class="form-check-label small" for="transferCheck">Agree to company transfer
-                                        policies.</label>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 py-3 fw-bold mt-4 shadow-sm">SUBMIT DETAILED
-                            APPLICATION</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <section class="py-5" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
-        <div class="container">
-            <div class="row align-items-center g-5">
-
-                <div class="col-lg-6">
-                    <span class="text-primary fw-bold text-uppercase tracking-wider"
-                        style="letter-spacing: 2px; font-size: 0.85rem;">Careers at JITM Skills</span>
-                    <h1 class="mt-2 mb-4">Build a Career that <span
-                            class="text-primary bg-light px-2">Creates Impact.</span></h1>
-
-                    <p class="text-secondary mb-4" style="line-height: 1.8; font-size: 1.05rem;">
-                        At JITM Skills, careers are not just about jobs—they are about empowering lives, strengthening
-                        communities, and shaping India’s skilled workforce.
-                    </p>
-                    <p class="text-secondary mb-4" style="line-height: 1.8;">
-                        We invite passionate professionals, trainers, and young talents to join us in delivering
-                        large-scale skill development, employability, and entrepreneurship initiatives across the
-                        country.
-                    </p>
-
-                    <div
-                        class="d-flex align-items-center mt-5 p-3 rounded-3 bg-white shadow-sm border-start border-4 border-primary">
-                        <div class="me-3">
-                            <i class="fas fa-quote-left text-primary fs-3"></i>
-                        </div>
-                        <p class="mb-0 fst-italic text-muted">"JITM Skills provides a platform to learn, lead, and make
-                            a difference."</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
-                        <h4 class="fw-bold mb-4" style="color: #fc590e;">Why work with us:</h4>
-
-                        <div class="benefit-list">
-                            <div class="d-flex mb-4">
-                                <div class="icon-box me-3">
-                                    <i class="fas fa-landmark text-primary fs-5"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Government & CSR Projects</h6>
-                                    <p class="small text-muted mb-0">Opportunity to work on Govt of India & State Skill
-                                        Missions.</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex mb-4">
-                                <div class="icon-box me-3">
-                                    <i class="fas fa-map-marked-alt text-primary fs-5"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Multi-State Exposure</h6>
-                                    <p class="small text-muted mb-0">Exposure to multi-state operations and diverse
-                                        sectors across India.</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex mb-4">
-                                <div class="icon-box me-3">
-                                    <i class="fas fa-users-cog text-primary fs-5"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Professional Culture</h6>
-                                    <p class="small text-muted mb-0">Transparent processes, ethical governance, and a
-                                        professional work environment.</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex">
-                                <div class="icon-box me-3">
-                                    <i class="fas fa-chart-line text-primary fs-5"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Learning & Growth</h6>
-                                    <p class="small text-muted mb-0">Continuous learning and career growth opportunities
-                                        for every professional.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
+
     <!-- Newsletter Start -->
     <section class="container-fluid bg-primary newsletter p-0">
         <div class="container p-0">
