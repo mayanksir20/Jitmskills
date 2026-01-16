@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 html,
 body {
@@ -30,7 +31,7 @@ h1,
 }
 
 p {
-  text-align: justify;
+  text-align: justify !important;
   font-family: sans-serif;
 }
 
@@ -2716,4 +2717,133 @@ ul {
   left: 0;
   color: var(--success);
   font-weight: bold;
+}
+
+/* knowledge-gallery */
+.pillar-card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s;
+  height: 100%;
+}
+.pillar-card:hover {
+  transform: translateY(-10px);
+}
+.article-card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.badge-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #0d6efd;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.article-card {
+  transition: 0.3s;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+.badge-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: #fff;
+  z-index: 10;
+}
+
+/* Modal 95% width and internal scroll */
+.modal-95w {
+  width: 95%;
+  max-width: 95%;
+  margin: 1.5rem auto;
+}
+.dynamic-modal-body {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+/* Resource Download Section */
+
+/* Premium Resource Cards */
+.resource-card {
+  border: none;
+  border-radius: 24px;
+  background: #ffffff;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.resource-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+.resource-card:hover .icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Buttons Styling */
+.btn-download-main {
+  background: #1e3a8a;
+  color: white;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+  border: none;
+  width: 100%;
+}
+
+/* Impact Section */
+.impact-box {
+  background: white;
+  border-radius: 40px;
+  padding: 80px 40px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.meta-info {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.border-gradient {
+  border-left: 6px solid #1e3a8a;
 }
