@@ -30,6 +30,69 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .contact-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .contact-card {
+            background: #ffffff;
+            border: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            padding: 1rem;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.25 red rgba(13, 110, 253, 0.1);
+            border-color: #0d6efd;
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(13, 110, 253, 0.1);
+            color: #0d6efd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: #495057;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            color: #0d6efd;
+        }
+
+        .map-container {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: -80px;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,110 +108,114 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top">
-    <div class="navbar-section mx-3">
+        <div class="navbar-section mx-3">
 
-        <!-- Logo Section -->
-        <div class="logos text-center">
-            <a href="index.html"><img src="img/jitm skills logo-old.png" alt="Logo"></a>
-        </div>
-
-        <hr class="menu-line">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-
-                    <!-- 1. HOME -->
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-
-                    <!-- 2. ABOUT US -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="about.html" class="dropdown-item">About JITM Skills</a>
-                            <a href="director.html" class="dropdown-item">Director’s Message</a>
-                            <a href="leadership-team.html" class="dropdown-item">Leadership & Team</a>
-                            <a href="our-centers.html" class="dropdown-item">Our Centers</a>
-                            <a href="why-choose-us.html" class="dropdown-item">Why Choose Us</a>
-                        </div>
-                    </div>
-
-                    <!-- 3. PROGRAMS -->
-                    <a href="programs.html" class="nav-item nav-link">Programs</a>
-
-                    <!-- 4. SECTORS & COURSES -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sectors & Courses</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="retail.html" class="dropdown-item">Retail</a>
-                            <a href="apparel-tailoring.html" class="dropdown-item">Apparel & Tailoring</a>
-                            <a href="electronics-mobile.html" class="dropdown-item">Electronics & Mobile Repair</a>
-                            <a href="healthcare-nursing.html" class="dropdown-item">Healthcare & Nursing Assistant</a>
-                            <a href="it-digital.html" class="dropdown-item">IT & Digital Skills</a>
-                            <a href="hospitality.html" class="dropdown-item">Hospitality</a>
-                            <a href="agriculture-allied.html" class="dropdown-item">Agriculture & Allied</a>
-                            <a href="beauty-wellness.html" class="dropdown-item">Beauty & Wellness</a>
-                            <a href="corporate-training.html" class="dropdown-item">Custom Corporate Training</a>
-                        </div>
-                    </div>
-
-                    <!-- 5. SUCCESS STORIES -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Success Stories</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="student-testimonials.html" class="dropdown-item">Student Testimonials</a>
-                            <a href="placement-highlights.html" class="dropdown-item">Placement Highlights</a>
-                            <a href="entrepreneurship-stories.html" class="dropdown-item">Entrepreneurship Success Stories</a>
-                            <a href="before-after.html" class="dropdown-item">Before & After Journey</a>
-                        </div>
-                    </div>
-
-                    <!-- 6. EMPLOYERS & PARTNERSHIPS -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Employers & Partnerships</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="recruitment-partners.html" class="dropdown-item">Our Recruitment Partners</a>
-                            <a href="industry-tieups.html" class="dropdown-item">Industry Tie-ups</a>
-                            <a href="become-hiring-partner.html" class="dropdown-item">Become a Hiring Partner</a>
-                            <a href="mous-collaborations.html" class="dropdown-item">MoUs & Collaborations</a>
-                        </div>
-                    </div>
-
-                    <!-- 7. MEDIA & INSIGHTS -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Media & Insights</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="news-events.html" class="dropdown-item">News & Events</a>
-                            <a href="gallery.html" class="dropdown-item">Gallery (Photos & Videos)</a>
-                            <a href="press-releases.html" class="dropdown-item">Press Releases</a>
-                            <a href="knowledge-articles.html" class="dropdown-item">Knowledge Articles</a>
-                            <a href="downloads.html" class="dropdown-item">Downloads / Brochures</a>
-                        </div>
-                    </div>
-
-                    <!-- 8. CAREER -->
-                    <div class="nav-item dropdown">
-                        <a href="contact.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Career</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="work-with-jitm.html" class="dropdown-item">Work With JITM</a>
-                            <a href="trainer-faculty.html" class="dropdown-item">Trainer & Faculty Positions</a>
-                            <a href="internship-opportunities.html" class="dropdown-item">Internship Opportunities</a>
-                        </div>
-                    </div>
-
-                    <!-- 9. CONTACT -->
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
+            <!-- Logo Section -->
+            <div class="logos text-center">
+                <a href="index.html"><img src="img/jitm skills logo-old.png" alt="Logo"></a>
             </div>
-        </nav>
+
+            <hr class="menu-line">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+
+                        <!-- 1. HOME -->
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+
+                        <!-- 2. ABOUT US -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="about.html" class="dropdown-item">About JITM Skills</a>
+                                <a href="director.html" class="dropdown-item">Director’s Message</a>
+                                <a href="leadership-team.html" class="dropdown-item">Leadership & Team</a>
+                                <a href="our-centers.html" class="dropdown-item">Our Centers</a>
+                                <a href="why-choose-us.html" class="dropdown-item">Why Choose Us</a>
+                            </div>
+                        </div>
+
+                        <!-- 3. PROGRAMS -->
+                        <a href="programs.html" class="nav-item nav-link">Programs</a>
+
+                        <!-- 4. SECTORS & COURSES -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sectors & Courses</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="retail.html" class="dropdown-item">Retail</a>
+                                <a href="apparel-tailoring.html" class="dropdown-item">Apparel & Tailoring</a>
+                                <a href="electronics-mobile.html" class="dropdown-item">Electronics & Mobile Repair</a>
+                                <a href="healthcare-nursing.html" class="dropdown-item">Healthcare & Nursing
+                                    Assistant</a>
+                                <a href="it-digital.html" class="dropdown-item">IT & Digital Skills</a>
+                                <a href="hospitality.html" class="dropdown-item">Hospitality</a>
+                                <a href="agriculture-allied.html" class="dropdown-item">Agriculture & Allied</a>
+                                <a href="beauty-wellness.html" class="dropdown-item">Beauty & Wellness</a>
+                                <a href="corporate-training.html" class="dropdown-item">Custom Corporate Training</a>
+                            </div>
+                        </div>
+
+                        <!-- 5. SUCCESS STORIES -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Success Stories</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="student-testimonials.html" class="dropdown-item">Student Testimonials</a>
+                                <a href="placement-highlights.html" class="dropdown-item">Placement Highlights</a>
+                                <a href="entrepreneurship-stories.html" class="dropdown-item">Entrepreneurship Success
+                                    Stories</a>
+                                <a href="before-after.html" class="dropdown-item">Before & After Journey</a>
+                            </div>
+                        </div>
+
+                        <!-- 6. EMPLOYERS & PARTNERSHIPS -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Employers &
+                                Partnerships</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="recruitment-partners.html" class="dropdown-item">Our Recruitment Partners</a>
+                                <a href="industry-tieups.html" class="dropdown-item">Industry Tie-ups</a>
+                                <a href="become-hiring-partner.html" class="dropdown-item">Become a Hiring Partner</a>
+                                <a href="mous-collaborations.html" class="dropdown-item">MoUs & Collaborations</a>
+                            </div>
+                        </div>
+
+                        <!-- 7. MEDIA & INSIGHTS -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Media & Insights</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="news-events.html" class="dropdown-item">News & Events</a>
+                                <a href="gallery.html" class="dropdown-item">Gallery (Photos & Videos)</a>
+                                <a href="press-releases.html" class="dropdown-item">Press Releases</a>
+                                <a href="knowledge-articles.html" class="dropdown-item">Knowledge Articles</a>
+                                <a href="downloads.html" class="dropdown-item">Downloads / Brochures</a>
+                            </div>
+                        </div>
+
+                        <!-- 8. CAREER -->
+                        <div class="nav-item dropdown">
+                            <a href="contact.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Career</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="work-with-jitm.html" class="dropdown-item">Work With JITM</a>
+                                <a href="trainer-faculty.html" class="dropdown-item">Trainer & Faculty Positions</a>
+                                <a href="internship-opportunities.html" class="dropdown-item">Internship
+                                    Opportunities</a>
+                            </div>
+                        </div>
+
+                        <!-- 9. CONTACT -->
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </div>
-</div>
     <!-- Navbar End -->
 
 
@@ -174,110 +241,97 @@
 
 
     <!-- Contact Start -->
-    <div class="container-fluid py-5">
-        <div class="container text-center py-5">
-            <div class=" wow fadeIn" data-wow-delay="0.1s">
-                <h1 class="mb-3">Have Any Query? <span class="text-primary bg-light px-2">Contact Us</span></h1>
-                <p>
+    <div class="container-fluid contact-section py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h6 class="text-primary text-uppercase fw-bold mb-2">Get In Touch</h6>
+                <h1 class="display-5 mb-4">Have Any Query? <span class="text-primary">Contact Us</span></h1>
+                <p class="text-muted fs-5">
                     Empowering youth, enabling careers — we are here to support you every step of the way.
-                    Whether you’re a student seeking guidance, an employer looking for skilled talent, or a partner
-                    exploring collaboration, our team is ready to assist.
+                    Whether you’re a student, employer, or partner, our team is ready to assist.
                 </p>
             </div>
-            <div class="row mt-5">
 
-                <div class="col-md-6">
-                    <div class="contact-card p-3">
-                        <h3 class="mb-3">Send Us a<span class="text-primary bg-light px-2">&nbsp;Message</span></h3>
-                        <h4 class="lh-base mb-4">Have a question or need personalised assistance?
-                            Fill out the form below and our team will respond within <b>24–48 business hours.</b>
-                        </h4>
-                        <div class="wow fadeIn" data-wow-delay="0.3s">
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                            <label for="name">Your Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="email"
-                                                placeholder="Your Email">
-                                            <label for="email">Your Email</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                            <label for="subject">Subject</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here"
-                                                id="message" style="height: 150px"></textarea>
-                                            <label for="message">Message</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+            <div class="row g-5">
+                <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.3s">
+                    <div class="contact-card p-4 p-md-5">
+                        <h3 class="fw-bold mb-4">Send Us a <span class="text-primary">Message</span></h3>
+                        <form>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message"
+                                            style="height: 150px"></textarea>
+                                        <label for="message">Your Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold shadow-sm"
+                                        type="submit">
+                                        <i class="fa fa-paper-plane me-2"></i> Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="contact-details">
-                        <div class="row g-3">
-                            <div class="col-md-12">
-                                <div class="contact-card p-3">
-                                    <p class="text-center"><b>Corporate Office</b></p>
-                                    <a href="https://www.google.com/maps/dir/?api=1&destination=D-87,+Vyapar+Marg,+D+Block,+Sector+2,+Noida,+Uttar+Pradesh+201301"
-                                        target="_blank">
-                                        <i class="fa fa-map-marker-alt me-3"></i> D-87, Vyapar Marg, D Block, Sector 2,
-                                        Noida – 201301
-                                    </a>
-                                </div>
+
+                <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.3s">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="contact-card p-4 text-center">
+                                <div class="icon-box"><i class="fa fa-map-marker-alt"></i></div>
+                                <h5 class="fw-bold">Corporate Office</h5>
+                                <a href="#" class="contact-link">D-87, Vyapar Marg, Sector 2, Noida, UP – 201301</a>
                             </div>
-                            <div class="col-md-6">
-                                <div class="contact-card p-3">
-                                    <p class="text-center"><b>Email</b></p>
-                                    <p class="text-center mb-0">
-                                        <a href="mailto:info@jitmskills.com"><i
-                                                class="fa fa-envelope me-3"></i>info@jitmskills.com</a>
-                                    </p>
-                                    <hr>
-                                    <p class="text-center mb-0">
-                                        <a href="mailto:jitmskillspvtltd@gmail.com"><i
-                                                class="fa fa-envelope me-3"></i>jitmskillspvtltd@gmail.com</a><br>
-                                    </p>
-                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-card p-4 text-center">
+                                <div class="icon-box"><i class="fa fa-envelope-open"></i></div>
+                                <h5 class="fw-bold">Email Us</h5>
+                                <a href="mailto:info@jitmskills.com"
+                                    class="contact-link small">info@jitmskills.com</a><br>
+                                <a href="mailto:jitmskills@gmail.com"
+                                    class="contact-link small">jitmskills@gmail.com</a>
                             </div>
-                            <div class="col-md-6">
-                                <div class="contact-card p-3">
-                                    <p class="text-center"><b>Phone</b></p>
-                                    <p class="text-center mb-0">
-                                        <a href="tel:01204282837"><i class="fa fa-phone-alt me-3"></i> 0120 428 2837</a>
-                                    </p>
-                                    <hr>
-                                    <p class="text-center mb-0">
-                                        <a href="tel:01204570318"><i class="fa fa-phone-alt me-3"></i> 0120 4570 318</a>
-                                    </p>
-                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-card p-4 text-center">
+                                <div class="icon-box"><i class="fa fa-phone-alt"></i></div>
+                                <h5 class="fw-bold">Call Us</h5>
+                                <a href="tel:01204282837" class="contact-link small">0120 428 2837</a><br>
+                                <a href="tel:01204570318" class="contact-link small">0120 4570 318</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="map">
+    </div>
+
+    <div class="container pb-5">
+        <div class="map-container wow fadeInUp" data-wow-delay="0.5s">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.542551507926!2d77.31849420000002!3d28.583496200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce459a92b277d%3A0x23975487d0b1fafd!2sJITM%20Skills%20Private%20Limited!5e0!3m2!1sen!2sin!4v1765614100500!5m2!1sen!2sin"
-                width="100%" height="440" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
     <!-- Contact End -->
@@ -341,7 +395,8 @@
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                     <a href="index.html" class="d-inline-block mb-3">
                         <!-- <h2 class="text-white fw-bold">JITM Skills Pvt. Ltd.</h2> -->
-                  <img src="img/jitm skills logo white.png" alt="JITM Skills Logo" class="mb-3" style="width: 180px;">
+                        <img src="img/jitm skills logo white.png" alt="JITM Skills Logo" class="mb-3"
+                            style="width: 180px;">
                     </a>
                     <p class="mb-4">
                         Empowering India’s youth through government-approved skill development,
