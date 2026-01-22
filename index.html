@@ -30,6 +30,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -45,110 +46,128 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top">
-    <div class="navbar-section mx-3">
-
-        <!-- Logo Section -->
-        <div class="logos text-center">
-            <a href="index.html"><img src="img/jitm skills logo-old.png" alt="Logo"></a>
-        </div>
-
-        <hr class="menu-line">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-
-                    <!-- 1. HOME -->
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-
-                    <!-- 2. ABOUT US -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="about.html" class="dropdown-item">About JITM Skills</a>
-                            <a href="director.html" class="dropdown-item">Director’s Message</a>
-                            <a href="leadership-team.html" class="dropdown-item">Leadership & Team</a>
-                            <a href="our-centers.html" class="dropdown-item">Our Centers</a>
-                            <a href="why-choose-us.html" class="dropdown-item">Why Choose Us</a>
-                        </div>
-                    </div>
-
-                    <!-- 3. PROGRAMS -->
-                    <a href="programs.html" class="nav-item nav-link">Programs</a>
-
-                    <!-- 4. SECTORS & COURSES -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sectors & Courses</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="retail.html" class="dropdown-item">Retail</a>
-                            <a href="apparel-tailoring.html" class="dropdown-item">Apparel & Tailoring</a>
-                            <a href="electronics-mobile.html" class="dropdown-item">Electronics & Mobile Repair</a>
-                            <a href="healthcare-nursing.html" class="dropdown-item">Healthcare & Nursing Assistant</a>
-                            <a href="it-digital.html" class="dropdown-item">IT & Digital Skills</a>
-                            <a href="hospitality.html" class="dropdown-item">Hospitality</a>
-                            <a href="agriculture-allied.html" class="dropdown-item">Agriculture & Allied</a>
-                            <a href="beauty-wellness.html" class="dropdown-item">Beauty & Wellness</a>
-                            <a href="corporate-training.html" class="dropdown-item">Custom Corporate Training</a>
-                        </div>
-                    </div>
-
-                    <!-- 5. SUCCESS STORIES -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Success Stories</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="student-testimonials.html" class="dropdown-item">Student Testimonials</a>
-                            <a href="placement-highlights.html" class="dropdown-item">Placement Highlights</a>
-                            <a href="entrepreneurship-stories.html" class="dropdown-item">Entrepreneurship Success Stories</a>
-                            <a href="before-after.html" class="dropdown-item">Before & After Journey</a>
-                        </div>
-                    </div>
-
-                    <!-- 6. EMPLOYERS & PARTNERSHIPS -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Employers & Partnerships</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="recruitment-partners.html" class="dropdown-item">Our Recruitment Partners</a>
-                            <a href="industry-tieups.html" class="dropdown-item">Industry Tie-ups</a>
-                            <a href="become-hiring-partner.html" class="dropdown-item">Become a Hiring Partner</a>
-                            <a href="mous-collaborations.html" class="dropdown-item">MoUs & Collaborations</a>
-                        </div>
-                    </div>
-
-                    <!-- 7. MEDIA & INSIGHTS -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Media & Insights</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="news-events.html" class="dropdown-item">News & Events</a>
-                            <a href="gallery.html" class="dropdown-item">Gallery (Photos & Videos)</a>
-                            <a href="press-releases.html" class="dropdown-item">Press Releases</a>
-                            <a href="knowledge-articles.html" class="dropdown-item">Knowledge Articles</a>
-                            <a href="downloads.html" class="dropdown-item">Downloads / Brochures</a>
-                        </div>
-                    </div>
-
-                    <!-- 8. CAREER -->
-                    <div class="nav-item dropdown">
-                        <a href="contact.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Career</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="work-with-jitm.html" class="dropdown-item">Work With JITM</a>
-                            <a href="trainer-faculty.html" class="dropdown-item">Trainer & Faculty Positions</a>
-                            <a href="internship-opportunities.html" class="dropdown-item">Internship Opportunities</a>
-                        </div>
-                    </div>
-
-                    <!-- 9. CONTACT -->
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+        <div class="navbar-section">
+            <!-- Logo Section -->
+            <div class="logos">
+                <!-- Left Logo -->
+                <div class="left-logo">
+                    <a href="index.html">
+                        <img src="img/jitm skills logo-old.png" alt="Logo">
+                    </a>
                 </div>
+
+                <!-- Right Logo -->
+                <div class="right-logo">
+                    <a href="index.html">
+                        <img src="img/nsdc logo.png" alt="Logo">
+                        <img src="img/skill india.png" class="mt-2" alt="Logo">
+                    </a>
+                </div>
+
             </div>
-        </nav>
+
+
+            <hr class="menu-line border-bottom border-2 border-white">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+
+                        <!-- 1. HOME -->
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+
+                        <!-- 2. ABOUT US -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="about.html" class="dropdown-item">About JITM Skills</a>
+                                <a href="director.html" class="dropdown-item">Director’s Message</a>
+                                <a href="leadership-team.html" class="dropdown-item">Leadership & Team</a>
+                                <a href="our-centers.html" class="dropdown-item">Our Centers</a>
+                                <a href="why-choose-us.html" class="dropdown-item">Why Choose Us</a>
+                            </div>
+                        </div>
+
+                        <!-- 3. PROGRAMS -->
+                        <a href="programs.html" class="nav-item nav-link">Programs</a>
+
+                        <!-- 4. SECTORS & COURSES -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sectors & Courses</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="retail.html" class="dropdown-item">Retail</a>
+                                <a href="apparel-tailoring.html" class="dropdown-item">Apparel & Tailoring</a>
+                                <a href="electronics-mobile.html" class="dropdown-item">Electronics & Mobile Repair</a>
+                                <a href="healthcare-nursing.html" class="dropdown-item">Healthcare & Nursing
+                                    Assistant</a>
+                                <a href="it-digital.html" class="dropdown-item">IT & Digital Skills</a>
+                                <a href="hospitality.html" class="dropdown-item">Hospitality</a>
+                                <a href="agriculture-allied.html" class="dropdown-item">Agriculture & Allied</a>
+                                <a href="beauty-wellness.html" class="dropdown-item">Beauty & Wellness</a>
+                                <a href="corporate-training.html" class="dropdown-item">Custom Corporate Training</a>
+                            </div>
+                        </div>
+
+                        <!-- 5. SUCCESS STORIES -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Success Stories</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="student-testimonials.html" class="dropdown-item">Student Testimonials</a>
+                                <a href="placement-highlights.html" class="dropdown-item">Placement Highlights</a>
+                                <a href="entrepreneurship-stories.html" class="dropdown-item">Entrepreneurship Success
+                                    Stories</a>
+                                <a href="before-after.html" class="dropdown-item">Before & After Journey</a>
+                            </div>
+                        </div>
+
+                        <!-- 6. EMPLOYERS & PARTNERSHIPS -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Employers &
+                                Partnerships</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="recruitment-partners.html" class="dropdown-item">Our Recruitment Partners</a>
+                                <a href="industry-tieups.html" class="dropdown-item">Industry Tie-ups</a>
+                                <a href="become-hiring-partner.html" class="dropdown-item">Become a Hiring Partner</a>
+                                <a href="mous-collaborations.html" class="dropdown-item">MoUs & Collaborations</a>
+                            </div>
+                        </div>
+
+                        <!-- 7. MEDIA & INSIGHTS -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Media & Insights</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="news-events.html" class="dropdown-item">News & Events</a>
+                                <a href="gallery.html" class="dropdown-item">Gallery (Photos & Videos)</a>
+                                <a href="press-releases.html" class="dropdown-item">Press Releases</a>
+                                <a href="knowledge-articles.html" class="dropdown-item">Knowledge Articles</a>
+                                <a href="downloads.html" class="dropdown-item">Downloads / Brochures</a>
+                            </div>
+                        </div>
+
+                        <!-- 8. CAREER -->
+                        <div class="nav-item dropdown">
+                            <a href="contact.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Career</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="work-with-jitm.html" class="dropdown-item">Work With JITM</a>
+                                <a href="trainer-faculty.html" class="dropdown-item">Trainer & Faculty Positions</a>
+                                <a href="internship-opportunities.html" class="dropdown-item">Internship
+                                    Opportunities</a>
+                            </div>
+                        </div>
+
+                        <!-- 9. CONTACT -->
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </div>
-</div>
     <!-- Navbar End -->
 
 
@@ -159,7 +178,7 @@
 
                 <!-- Text Slider -->
                 <div class="col-lg-6">
-                    <div class="owl-carousel hero-text-carousel animated fadeIn">
+                    <div class="owl-carousel hero-text-carousel animated">
                         <div class="hero-text-item">
                             <h1 class="display-1 mb-4">
                                 Creating Opportunities &<span class="text-primary"> Changing Lives</span>Across India
@@ -277,7 +296,7 @@
             <div class="row g-5">
                 <div class="col-lg-6">
                     <div class="row">
-                        <div class="col-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="col-6">
                             <img class="img-fluid" src="img/about-1.png" alt="">
                         </div>
                         <div class="col-6 wow fadeIn" data-wow-delay="0.3s">
@@ -288,7 +307,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-lg-6">
                     <h1 class="mb-5">
                         <span class=" text-primary bg-light px-2">OUR JOURNEY OF</span> TRANSFORMING LIVES
                     </h1>
@@ -838,6 +857,50 @@
     </section>
     <!-- Service End -->
 
+    <!-- ====== Government Partners Section ====== -->
+    <section class="gov-partner-section py-5">
+        <div class="container text-center mb-4">
+            <div class="container text-center mb-4">
+                <h1 class="mb-3 text-center">
+                    Get Global
+                    <span class="text-primary bg-white px-2">Certification</span>
+                </h1>
+                <p class="text-muted tex text-center">
+                    We provide industry-recognized global certifications to enhance students' skills.
+                    Our training programs ensure hands-on experience and practical knowledge.
+                    With placement support, students gain the confidence and opportunities to succeed in their careers.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="logo-slider">
+            <div class="logo-track">
+                <!-- 18 logos -->
+                <img src="/img/Partner/partner-logo-1 (1).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (2).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (3).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (4).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (5).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (6).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (7).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (8).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (9).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (10).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (11).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (12).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (13).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (14).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (15).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (16).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (17).png" alt="Gov Partner">
+                <img src="/img/Partner/partner-logo-1 (18).png" alt="Gov Partner">
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- Team Start -->
     <div class="container-fluid bg-light">
         <div class="container py-5">
@@ -1195,7 +1258,8 @@
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                     <a href="index.html" class="d-inline-block mb-3">
                         <!-- <h2 class="text-white fw-bold">JITM Skills Pvt. Ltd.</h2> -->
-                  <img src="img/jitm skills logo white.png" alt="JITM Skills Logo" class="mb-3" style="width: 180px;">
+                        <img src="img/jitm skills logo white.png" alt="JITM Skills Logo" class="mb-3"
+                            style="width: 180px;">
                     </a>
                     <p class="mb-4">
                         Empowering India’s youth through government-approved skill development,
@@ -1300,6 +1364,11 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="https://wa.me/919125050055?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
+        class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 
 
 
@@ -1327,6 +1396,7 @@
                 closeProjectModal();
             }
         };
+
     </script>
 
 
@@ -1340,7 +1410,7 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>

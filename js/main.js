@@ -15,11 +15,13 @@
     new WOW().init();
 
     // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.sticky-top').addClass('bg-white shadow-sm').css('top', '0px');
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 100) {
+            $('.sticky-top')
+                .addClass('bg-white shadow-sm');
         } else {
-            $('.sticky-top').removeClass('bg-white shadow-sm').css('top', '-150px');
+            $('.sticky-top')
+                .removeClass('bg-white shadow-sm');
         }
     });
 
@@ -96,105 +98,88 @@
 
 })(jQuery);
 
-
-// Hero Section - Counter Up
-function startCount() {
-    const counters = document.querySelectorAll(".count");
-
-    counters.forEach(counter => {
-        counter.innerText = "0";
-        const target = +counter.getAttribute("data-target");
-
-        const update = () => {
-            const current = +counter.innerText;
-            const increment = target / 150;
-
-            if (current < target) {
-                counter.innerText = Math.ceil(current + increment);
-                setTimeout(update, 15);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        update();
-    });
-}
-
-window.onload = startCount;
-
-
-// Modal functionality
-document.querySelectorAll(".team-desc").forEach(desc => {
-    let words = desc.innerText.trim().split(" ");
-    if (words.length > 20) {
-        desc.innerText = words.slice(0, 20).join(" ") + "...";
-    }
-});
-
-
-// -----counting-numbers-placement-hoglight-page-----
-const counters = document.querySelectorAll('.counter');
-const speed = 150;
-
-counters.forEach(counter => {
-    const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const inc = Math.ceil(target / speed);
-
-        if (count < target) {
-            counter.innerText = count + inc;
-            setTimeout(updateCount, 20);
-        } else {
-            counter.innerText = target;
-        }
-    };
-    updateCount();
-});
-
 // ==========================
-// ACHIEVEMENTS COUNTER FIX
+// DOMContentLoaded Init
 // ==========================
 document.addEventListener("DOMContentLoaded", function () {
 
-    const counters = document.querySelectorAll(".count");
+    // --- Hero Section - Counter Up ---
+    function startCount() {
+        const counters = document.querySelectorAll(".count");
 
-    if (!counters.length) return;
+        counters.forEach(counter => {
+            counter.innerText = "0";
+            const target = +counter.getAttribute("data-target");
 
-    const startCounter = (counter) => {
-        const target = +counter.getAttribute("data-target");
-        let current = 0;
-        const increment = target / 150;
+            const update = () => {
+                const current = +counter.innerText;
+                const increment = target / 150;
 
-        const update = () => {
-            current += increment;
-            if (current < target) {
-                counter.innerText = Math.floor(current).toLocaleString();
-                requestAnimationFrame(update);
-            } else {
-                counter.innerText = target.toLocaleString();
-            }
-        };
-        update();
-    };
+                if (current < target) {
+                    counter.innerText = Math.ceil(current + increment);
+                    setTimeout(update, 15);
+                } else {
+                    counter.innerText = target;
+                }
+            };
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
+            update();
         });
-    }, { threshold: 0.5 });
+    }
+    startCount();
 
-    counters.forEach(counter => observer.observe(counter));
+    // --- Modal text truncation ---
+    document.querySelectorAll(".team-desc").forEach(desc => {
+        let words = desc.innerText.trim().split(" ");
+        if (words.length > 20) {
+            desc.innerText = words.slice(0, 20).join(" ") + "...";
+        }
+    });
+
+    // --- Counting numbers for achievements ---
+    const achievementCounters = document.querySelectorAll(".count");
+    if (achievementCounters.length) {
+        const startCounter = (counter) => {
+            const target = +counter.getAttribute("data-target");
+            let current = 0;
+            const increment = target / 150;
+
+            const update = () => {
+                current += increment;
+                if (current < target) {
+                    counter.innerText = Math.floor(current).toLocaleString();
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            update();
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        achievementCounters.forEach(counter => observer.observe(counter));
+    }
+
+    // --- Reverse news order ---
+    const container = document.getElementById("newsContainer");
+    if (container) {
+        const newsItems = Array.from(container.children);
+        newsItems.reverse().forEach(item => container.appendChild(item));
+    }
+
+    // --- Press releases and gallery filter initialization ---
+    showFilteredItems();
 });
 
-
-
-// ---news-----
-
+// --- News modal ---
 function openNews(element) {
     const cardBody = element.parentElement;
     const title = cardBody.querySelector('h5').innerText;
@@ -207,24 +192,19 @@ function openNews(element) {
     myModal.show();
 }
 
-
+// --- Spotlight slides ---
 const slides = document.querySelectorAll(".spotlight-feature");
 let currentSlide = 0;
-
 setInterval(() => {
-    slides[currentSlide].classList.remove("active");
+    slides[currentSlide]?.classList.remove("active");
     currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
+    slides[currentSlide]?.classList.add("active");
 }, 5000);
 
-
-// view-more-news.js
+// --- View more news ---
 const step = 2;
-
 function loadMoreNews() {
     const hiddenNews = document.querySelectorAll('.extra-news.d-none');
-
-    // OLD NEWS pehle open hogi
     for (let i = 0; i < step && i < hiddenNews.length; i++) {
         hiddenNews[i].classList.remove('d-none');
     }
@@ -236,33 +216,17 @@ function loadMoreNews() {
     }
 }
 
-
-// Reverse news order on page load
-document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("newsContainer");
-    const newsItems = Array.from(container.children);
-
-    // Reverse order so latest added news shows first
-    newsItems.reverse().forEach(item => container.appendChild(item));
-});
-
-
-
-// Gallery Filtering
+// --- Gallery Filtering ---
 let activeCategory = 'all';
-let visibleCountLimit = 9; // Initial limit
-const loadStep = 4;        // Increment step
-
-window.onload = () => {
-    updateGalleryDisplay();
-};
+let visibleCountLimit = 9;
+const loadStep = 4;
+window.onload = () => updateGalleryDisplay();
 
 function filter(cat, element) {
     document.querySelectorAll('.roadmap-step').forEach(step => step.classList.remove('active'));
     element.classList.add('active');
-
     activeCategory = cat;
-    visibleCountLimit = 9; // Category change hone par reset
+    visibleCountLimit = 9;
     updateGalleryDisplay();
 }
 
@@ -288,11 +252,10 @@ function updateGalleryDisplay() {
         }
     });
 
-    // Button Disable Logic
     if (currentlyShownCount >= matchingImagesCount) {
         btn.innerHTML = "No More Photos";
         btn.classList.add('disabled-btn');
-        btn.disabled = true; // Button click hona band ho jayega
+        btn.disabled = true;
     } else {
         btn.innerHTML = "View More";
         btn.classList.remove('disabled-btn');
@@ -301,9 +264,7 @@ function updateGalleryDisplay() {
     }
 }
 
-
-
-// --- gallery tv Ticker Logic ---
+// --- TV Ticker ---
 const titles = [
     "Skill Training से **Job** तक का सफर – Real Student Feedback",
     "Free Course ने बदल दी मेरी **Life** | Learner Review",
@@ -317,23 +278,15 @@ const titles = [
     "From Learning to **Earning** – हमारे Students की Real Journey"
 ];
 
-const contents = document.querySelectorAll(".ticker-content");
-
-contents.forEach(container => {
+document.querySelectorAll(".ticker-content").forEach(container => {
     titles.forEach(title => {
         const span = document.createElement("span");
-
-        // FIX: highlight support
-        span.innerHTML =
-            "▶ " + title.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-
+        span.innerHTML = "▶ " + title.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
         container.appendChild(span);
     });
 });
 
-
-
-// Lightbox and Filter Logic for Press Releases
+// --- Lightbox ---
 let hoverTimer;
 let currentItems = 9;
 let activeFilter = 'all';
@@ -387,11 +340,10 @@ function showFilteredItems() {
         }
     });
 
-    // Logic for Disable Button and Message
     if (displayedCount >= matchCount) {
-        btn.disabled = true; // Button disable ho jayega
-        btn.innerText = "No More Content"; // Text change ho jayega
-        msg.style.display = "block"; // Red message dikhega
+        btn.disabled = true;
+        btn.innerText = "No More Content";
+        msg.style.display = "block";
     } else {
         btn.disabled = false;
         btn.innerText = "View More Stories";
@@ -404,151 +356,39 @@ function toggleFilterSidebar() { document.querySelector('.media-sidebar').classL
 
 document.addEventListener("DOMContentLoaded", showFilteredItems);
 
-
-
-
-
-// 1. DATA OBJECT: Saare articles ka data ek hi jagah
+// --- Articles Data & Modal ---
 const articlesData = [
-    {
-        id: 1,
-        category: "Government Schemes",
-        catClass: "bg-success",
-        title: "DDU-GKY: Training se Sustainable Jobs tak ka Safar",
-        shortDesc: "Kaise JITM Skills DDU-GKY ke through rural youth ko job-ready aur employable bana raha hai.",
-        img: "img/ddu-gky.jpg",
-        readTime: "6 Min Read",
-        fullContent: `
-        <p class="lead fw-bold text-success">Rural Youth Empowerment – Ground Level Impact</p>
-        <p>
-            DDU-GKY sirf ek government scheme nahi hai,
-            balki rural youth ke liye sustainable livelihood ka ek strong pathway hai.
-            JITM Skills ne multiple states me residential training,
-            soft skills aur employer linkage ke saath real placements deliver kiye hain.
-        </p>
-        <ul class="list-group list-group-flush mb-3">
-            <li class="list-group-item border-0 px-0">
-                <i class="fas fa-check-circle text-success me-2"></i>
-                Structured mobilization, counselling aur batch planning
-            </li>
-            <li class="list-group-item border-0 px-0">
-                <i class="fas fa-check-circle text-success me-2"></i>
-                Industry-aligned curriculum with placement tracking
-            </li>
-        </ul>
-        <p>
-            Training ka real success tab hota hai jab candidate
-            long-term employment me sustain kar paaye.
-        </p>
-    `
-    },
-    {
-        id: 2,
-        category: "Skill India",
-        catClass: "bg-primary",
-        title: "PMKVY: Quality Training aur Employability ka Real Connection",
-        shortDesc: "PMKVY ke under skill training ka focus sirf numbers par nahi, quality par hota hai.",
-        img: "img/pmkvy-certificate.jpg",
-        readTime: "5 Min Read",
-        fullContent: `
-        <p class="lead fw-bold text-primary">Skill India with Quality & Outcome Focus</p>
-        <p>
-            PMKVY ka impact tab visible hota hai jab training,
-            assessment aur placement ek saath align hote hain.
-            JITM Skills NOS-based delivery aur certified trainers ke saath
-            candidates ko industry-ready banata hai.
-        </p>
-        <div class="bg-light p-3 rounded border-start border-4 border-primary mb-3">
-            <i>“Certification tab meaningful hoti hai jab skill employable ho.”</i>
-        </div>
-        <p>
-            Employer engagement, assessment readiness
-            aur post-placement tracking PMKVY ke core success factors hain.
-        </p>
-    `
-    },
-    {
-        id: 3,
-        category: "Digital Skills",
-        catClass: "bg-info text-dark",
-        title: "Digital Skills: Aaj ke Job Market ki Basic Requirement",
-        shortDesc: "Basic computer knowledge se le kar workplace digital tools tak ka safar.",
-        img: "img/Digital Skills.png",
-        readTime: "4 Min Read",
-        fullContent: `
-        <p class="lead fw-bold text-info">Digital Literacy se Digital Confidence tak</p>
-        <p>
-            Aaj ke competitive job market me digital skills optional nahi rahi.
-            JITM Skills apni training me computer basics,
-            online communication aur workplace tools ko integrate karta hai.
-        </p>
-        <ul class="list-group list-group-flush mb-3">
-            <li class="list-group-item border-0 px-0">
-                <i class="fas fa-check-circle text-info me-2"></i>
-                MS Office, email etiquette aur digital documentation
-            </li>
-            <li class="list-group-item border-0 px-0">
-                <i class="fas fa-check-circle text-info me-2"></i>
-                Sector-specific digital exposure
-            </li>
-        </ul>
-        <p>
-            Ye skills candidates ko sirf placement hi nahi,
-            balki long-term career growth ke liye bhi ready karti hain.
-        </p>
-    `
-    },
-    {
-        id: 4,
-        category: "Youth Empowerment",
-        catClass: "bg-dark",
-        title: "Skill Training se Career Confidence tak",
-        shortDesc: "Technical skills ke saath confidence aur mindset ka development kyun zaroori hai.",
-        img: "img/Leadership Team.jpeg",
-        readTime: "6 Min Read",
-        fullContent: `
-        <p class="lead fw-bold text-dark">Beyond Skills – Building Career Confidence</p>
-        <p>
-            Sirf skill training kaafi nahi hoti.
-            Communication skills, workplace behaviour aur confidence
-            youth ke career journey me decisive role play karte hain.
-        </p>
-        <div class="bg-light p-3 rounded border-start border-4 border-dark mb-3">
-            <i>“Skills job dilati hain, confidence career banata hai.”</i>
-        </div>
-        <p>
-            JITM Skills ka holistic training model candidates ko
-            interview-ready aur workplace-ready banata hai.
-        </p>
-    `
-    }
+    { id: 1, category: "Government Schemes", catClass: "bg-success", title: "DDU-GKY: Training se Sustainable Jobs tak ka Safar", shortDesc: "Kaise JITM Skills DDU-GKY ke through rural youth ko job-ready aur employable bana raha hai.", img: "img/ddu-gky.jpg", readTime: "6 Min Read", fullContent: `<p class="lead fw-bold text-success">Rural Youth Empowerment – Ground Level Impact</p><p>DDU-GKY sirf ek government scheme nahi hai, balki rural youth ke liye sustainable livelihood ka ek strong pathway hai. JITM Skills ne multiple states me residential training, soft skills aur employer linkage ke saath real placements deliver kiye hain.</p><ul class="list-group list-group-flush mb-3"><li class="list-group-item border-0 px-0"><i class="fas fa-check-circle text-success me-2"></i>Structured mobilization, counselling aur batch planning</li><li class="list-group-item border-0 px-0"><i class="fas fa-check-circle text-success me-2"></i>Industry-aligned curriculum with placement tracking</li></ul><p>Training ka real success tab hota hai jab candidate long-term employment me sustain kar paaye.</p>` },
+    { id: 2, category: "Skill India", catClass: "bg-primary", title: "PMKVY: Quality Training aur Employability ka Real Connection", shortDesc: "PMKVY ke under skill training ka focus sirf numbers par nahi, quality par hota hai.", img: "img/pmkvy-certificate.jpg", readTime: "5 Min Read", fullContent: `<p class="lead fw-bold text-primary">Skill India with Quality & Outcome Focus</p><p>PMKVY ka impact tab visible hota hai jab training, assessment aur placement ek saath align hote hain. JITM Skills NOS-based delivery aur certified trainers ke saath candidates ko industry-ready banata hai.</p><div class="bg-light p-3 rounded border-start border-4 border-primary mb-3"><i>“Certification tab meaningful hoti hai jab skill employable ho.”</i></div><p>Employer engagement, assessment readiness aur post-placement tracking PMKVY ke core success factors hain.</p>` },
+    { id: 3, category: "Digital Skills", catClass: "bg-info text-dark", title: "Digital Skills: Aaj ke Job Market ki Basic Requirement", shortDesc: "Basic computer knowledge se le kar workplace digital tools tak ka safar.", img: "img/Digital Skills.png", readTime: "4 Min Read", fullContent: `<p class="lead fw-bold text-info">Digital Literacy se Digital Confidence tak</p><p>Aaj ke competitive job market me digital skills optional nahi rahi. JITM Skills apni training me computer basics, online communication aur workplace tools ko integrate karta hai.</p><ul class="list-group list-group-flush mb-3"><li class="list-group-item border-0 px-0"><i class="fas fa-check-circle text-info me-2"></i>MS Office, email etiquette aur digital documentation</li><li class="list-group-item border-0 px-0"><i class="fas fa-check-circle text-info me-2"></i>Sector-specific digital exposure</li></ul><p>Ye skills candidates ko sirf placement hi nahi, balki long-term career growth ke liye bhi ready karti hain.</p>` },
+    { id: 4, category: "Youth Empowerment", catClass: "bg-dark", title: "Skill Training se Career Confidence tak", shortDesc: "Technical skills ke saath confidence aur mindset ka development kyun zaroori hai.", img: "img/Leadership Team.jpeg", readTime: "6 Min Read", fullContent: `<p class="lead fw-bold text-dark">Beyond Skills – Building Career Confidence</p><p>Sirf skill training kaafi nahi hoti. Communication skills, workplace behaviour aur confidence youth ke career journey me decisive role play karte hain.</p><div class="bg-light p-3 rounded border-start border-4 border-dark mb-3"><i>“Skills job dilati hain, confidence career banata hai.”</i></div><p>JITM Skills ka holistic training model candidates ko interview-ready aur workplace-ready banata hai.</p>` }
 ];
 
-// 2. FUNCTION: Cards ko UI par render karna
 function displayArticles() {
     const container = document.getElementById('article-container');
+    if (!container) return;
     container.innerHTML = articlesData.map(article => `
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm article-card overflow-hidden h-100 flex-md-row">
-                        <div class="col-md-5 position-relative">
-                            <img src="${article.img}" class="w-100 h-100" style="object-fit:cover" alt="article">
-                            <span class="badge-category ${article.catClass}">${article.category}</span>
-                        </div>
-                        <div class="col-md-7 p-4 bg-white">
-                            <h5 class="fw-bold text-start mb-2">${article.title}</h5>
-                            <p class="text-muted small">${article.shortDesc}</p>
-                            <hr>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="small text-muted"><i class="far fa-clock"></i> ${article.readTime}</span>
-                                <button onclick="openModal(${article.id})" class="btn btn-sm btn-outline-primary rounded-pill">Read Article</button>
-                            </div>
-                        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm article-card overflow-hidden h-100 flex-md-row">
+                <div class="col-md-5 position-relative">
+                    <img src="${article.img}" class="w-100 h-100" style="object-fit:cover" alt="article">
+                    <span class="badge-category ${article.catClass}">${article.category}</span>
+                </div>
+                <div class="col-md-7 p-4 bg-white">
+                    <h5 class="fw-bold text-start mb-2">${article.title}</h5>
+                    <p class="text-muted small">${article.shortDesc}</p>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small text-muted"><i class="far fa-clock"></i> ${article.readTime}</span>
+                        <button onclick="openModal(${article.id})" class="btn btn-sm btn-outline-primary rounded-pill">Read Article</button>
                     </div>
                 </div>
-            `).join('');
+            </div>
+        </div>
+    `).join('');
 }
+displayArticles();
 
-// 3. FUNCTION: Modal mein data fill karke open karna
 function openModal(id) {
     const article = articlesData.find(a => a.id === id);
     if (!article) return;
@@ -557,23 +397,17 @@ function openModal(id) {
     document.getElementById('modalImg').src = article.img;
     document.getElementById('modalContent').innerHTML = article.fullContent;
 
-    // Header color change based on category
     const header = document.getElementById('modalHeaderBg');
-    header.className = 'modal-header border-0 p-4 ' + (article.catClass.includes('bg-warning') ? 'bg-warning' : 'bg-primary');
+    if (header) header.className = 'modal-header border-0 p-4 ' + article.catClass;
 
-    // Show modal
     const myModal = new bootstrap.Modal(document.getElementById('dynamicModal'));
     myModal.show();
 }
 
-// Initialize
-displayArticles();
-
-
+// --- Career Form ---
 function setJob(jobName) {
     document.querySelectorAll('.mainDesignation').forEach(i => i.value = jobName);
 }
-
 function openApplyModal(jobName) {
     setJob(jobName);
     var myModal = new bootstrap.Modal(document.getElementById('applyModal'));
@@ -581,19 +415,16 @@ function openApplyModal(jobName) {
 }
 
 document.querySelectorAll('.careerForm').forEach(form => {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
-        
         let currentForm = this;
         let phone = currentForm.querySelector('[name="phone"]').value;
 
-        // Validation (Yellow Warning)
-        if(phone.length < 10) {
+        if (phone.length < 10) {
             Swal.fire({ icon: 'warning', title: 'Check Phone Number', text: 'Please enter a valid 10-digit number.', confirmButtonColor: '#f1c40f' });
             return;
         }
 
-        // Confirmation Alert
         let isHq = currentForm.querySelector('[name="noida_hq"]')?.checked;
         let isPolicy = currentForm.querySelector('[name="transfer_policy"]')?.checked;
         let confirmText = (isHq && isPolicy) ? "Do you want to submit your application?" : "Note: You haven't agreed to all office policies. Submit anyway?";
@@ -609,28 +440,92 @@ document.querySelectorAll('.careerForm').forEach(form => {
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({ title: 'Sending...', text: 'Please wait', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
-
-                // fetch using same page URL
                 fetch(window.location.href, { method: 'POST', body: new FormData(currentForm) })
-                .then(r => r.text())
-                .then(data => {
-                    if(data.trim() === "Success") {
-                        Swal.fire({ icon: 'success', title: 'Application Sent!', text: 'Your CV has been mailed to info@jitmskills.com', confirmButtonColor: '#28a745' });
-                        currentForm.reset();
-                        // Close modal if open
-                        let modalEl = document.getElementById('applyModal');
-                        let modalInstance = bootstrap.Modal.getInstance(modalEl);
-                        if(modalInstance) modalInstance.hide();
-                    } else {
-                        Swal.fire({ icon: 'error', title: 'Mail Failed', text: 'Error: ' + data, confirmButtonColor: '#dc3545' });
-                    }
-                })
-                .catch((err) => {
-                    Swal.fire({ icon: 'error', title: 'Network Error', text: 'Check your internet or localhost connection.', confirmButtonColor: '#dc3545' });
-                });
+                    .then(r => r.text())
+                    .then(data => {
+                        if (data.trim() === "Success") {
+                            Swal.fire({ icon: 'success', title: 'Application Sent!', text: 'Your CV has been mailed to info@jitmskills.com', confirmButtonColor: '#28a745' });
+                            currentForm.reset();
+                            let modalEl = document.getElementById('applyModal');
+                            let modalInstance = bootstrap.Modal.getInstance(modalEl);
+                            if (modalInstance) modalInstance.hide();
+                        } else {
+                            Swal.fire({ icon: 'error', title: 'Mail Failed', text: 'Error: ' + data, confirmButtonColor: '#dc3545' });
+                        }
+                    })
+                    .catch((err) => {
+                        Swal.fire({ icon: 'error', title: 'Network Error', text: 'Check your internet or localhost connection.', confirmButtonColor: '#dc3545' });
+                    });
             }
         });
     });
 });
 
 
+
+// ---toggle-bg-coler-change-js
+(function ($) {
+    "use strict";
+
+    const header = document.querySelector(".sticky-top");
+    const menu = document.getElementById("navbarCollapse");
+
+    if (header && menu) {
+
+        // MENU OPEN
+        // menu.addEventListener("show.bs.collapse", function () {
+        //     header.style.backgroundColor = "#fff";
+        //     header.style.height = "100vh";
+        // });
+        menu.addEventListener("show.bs.collapse", function () {
+            header.style.backgroundImage = "url('/img/hero-bg.png')";
+            header.style.backgroundSize = "cover";
+            header.style.backgroundPosition = "center";
+            header.style.backgroundRepeat = "no-repeat";
+            header.style.height = "100vh";
+        });
+
+
+        // MENU CLOSE
+        menu.addEventListener("hide.bs.collapse", function () {
+            header.style.height = "auto";
+
+            if (window.scrollY < 100) {
+                header.style.backgroundColor = "transparent";
+            }
+        });
+
+    }
+
+})(jQuery);
+
+// --active-menu-js
+document.addEventListener("DOMContentLoaded", function () {
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar-nav a").forEach(link => {
+
+        const linkPage = link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+            // current page menu active
+            link.classList.add("active");
+
+            // agar dropdown ke andar hai
+            const parentDropdown = link.closest(".dropdown");
+            if (parentDropdown) {
+                parentDropdown
+                    .querySelector(".nav-link")
+                    .classList.add("parent-active");
+            }
+        }
+    });
+});
+
+
+// ---logo-scroll-clone-js
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector('.logo-track');
+    track.innerHTML += track.innerHTML; // Clone automatically for smooth infinite scroll
+});
