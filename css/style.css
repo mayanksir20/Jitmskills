@@ -195,6 +195,17 @@ p {
     margin: 0px 0px;
   }
 }
+/* Hide animation */
+.logos {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Hidden state */
+.logos.hide-on-scroll {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
 
 
 /* HR Line */

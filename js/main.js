@@ -529,3 +529,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector('.logo-track');
     track.innerHTML += track.innerHTML; // Clone automatically for smooth infinite scroll
 });
+
+
+
+
+
+
+ const logos = document.querySelector(".logos");
+  const trigger = document.querySelector("#scroll-trigger");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          logos.classList.add("hide-on-scroll");
+        } else {
+          logos.classList.remove("hide-on-scroll");
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-500px 0px 0px 0px"
+    }
+  );
+
+  observer.observe(trigger);
