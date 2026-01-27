@@ -197,7 +197,9 @@ p {
 }
 /* Hide animation */
 .logos {
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 /* Hidden state */
@@ -206,7 +208,6 @@ p {
   transform: translateY(-20px);
   pointer-events: none;
 }
-
 
 /* HR Line */
 .menu-line {
@@ -499,7 +500,7 @@ p {
 .subtitle {
   font-size: 18px;
   color: #555;
-  text-align: center;
+  text-align: center !important;
 }
 
 .gov-card {
@@ -756,83 +757,103 @@ ul {
 }
 
 /*** Our Team ***/
-.team-profile-card {
-  display: flex;
-  align-items: start;
-  gap: 20px;
-  transition: 0.3s ease;
+:root {
+  --primary-color: #0056b3;
+  --secondary-color: #d32f2f;
+  --bg-light: #f8f9fa;
 }
 
-.team-left {
-  border-left: 5px solid #d32f2f;
-  flex-direction: row;
+.section-title {
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #222;
 }
 
-.team-right {
-  border-right: 5px solid #d32f2f;
-  flex-direction: row;
-  justify-content: space-between;
+.leader-card {
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
 }
 
-.team-photo {
-  width: 250px;
-  height: 250px;
+.leader-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px solid var(--secondary-color);
+}
+
+.leader-img {
+  width: 100%;
+  height: 350px;
   object-fit: cover;
-  border: 3px solid #d32f2f;
-  border-radius: 8px;
+  transition: transform 0.5s ease;
 }
 
-.team-profile-card:hover {
-  background: #f7faff;
+.leader-card:hover .leader-img {
+  transform: scale(1.05);
 }
 
-/* List Styling */
-.team-list {
-  padding-left: 18px;
-  margin-bottom: 10px;
+.experience-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: var(--secondary-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
-.team-list li {
-  margin-bottom: 4px;
+.accordion-button:not(.collapsed) {
+  background-color: #f0f7ff;
+  color: var(--primary-color);
+  box-shadow: none;
 }
-.manav-photo-2 {
-  display: none;
+.accordion-header {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-/* Mobile Responsive */
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.125);
+}
+
+.program-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.program-list li {
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.btn-contact {
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
 @media (max-width: 768px) {
-  .team-profile-card {
-    flex-direction: column !important;
-    /* text-align: center; */
-    border-left: none;
-    border-right: none;
-    border-top: 5px solid #d32f2f;
-    padding-top: 20px;
+  .leader-img {
+    height: 280px;
   }
-  .manav-photo-2 {
-    display: block;
-  }
-  .manav-photo {
-    display: none;
-  }
-
-  .team-photo {
-    margin-bottom: 12px;
-    width: 200px;
-    height: 200px;
-  }
-
-  .profile-text {
-    margin: 0 !important;
-  }
-}
-.major-card {
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  background-color: #fff;
 }
 /*** Logo Slider ***/
 .logo-slider {
@@ -845,7 +866,7 @@ ul {
 .logo-track {
   display: flex;
   width: calc(4 * 16.6666%);
-  animation: scroll 20s linear infinite;
+  animation: logoScroll 20s linear infinite;
 }
 
 .logo-track img {
@@ -855,7 +876,7 @@ ul {
 }
 
 /* Seamless scroll keyframes */
-@keyframes scroll {
+@keyframes logoScroll {
   0% {
     transform: translateX(0);
   }
@@ -3006,7 +3027,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 20px; /* Fixed gap */
-  animation: scroll 10s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .gov-partner-section .logo-track img {
@@ -3025,7 +3046,7 @@ ul {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-250%);
   }
 }
 
@@ -3038,13 +3059,13 @@ ul {
 }
 @media (max-width: 768px) {
   .gov-partner-section .logo-track img {
-    height: 50px;
+    height: 110px;
     gap: 60px;
   }
 }
 @media (max-width: 480px) {
   .gov-partner-section .logo-track img {
-    height: 40px;
+    /* height: 40px; */
     gap: 40px;
   }
 }
